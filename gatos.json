@@ -1,0 +1,152 @@
+[
+    {
+        "nombre": "Luna",
+        "raza": "Bengalí",
+        "edad": 3,
+        "color": "Moteado"
+    },
+    {
+        "nombre": "Nieve",
+        "raza": "Ragdoll",
+        "edad": 2,
+        "color": "Blanco y gris"
+    },
+    {
+        "nombre": "Leo",
+        "raza": "British Shorthair",
+        "edad": 4,
+        "color": "Azul grisáceo"
+    },
+    {
+        "nombre": "Felix",
+        "raza": "Sphynx",
+        "edad": 5,
+        "color": "Piel"
+    },
+    {
+        "nombre": "Zoe",
+        "raza": "Noruego de Bosque",
+        "edad": 6,
+        "color": "Marrón dorado"
+    },
+    {
+        "nombre": "Miau",
+        "raza": "Siames",
+        "edad": 3,
+        "color": "Gris y blanco"
+    },
+    {
+        "nombre": "Pelusa",
+        "raza": "Persa",
+        "edad": 5,
+        "color": "Blanco"
+    },
+    {
+        "nombre": "Bigotes",
+        "raza": "Maine Coon",
+        "edad": 2,
+        "color": "Marrón y negro"
+    },
+    {
+        "nombre": "Garfield",
+        "raza": "Exótico",
+        "edad": 6,
+        "color": "Naranja"
+    },
+    {
+        "nombre": "Salem",
+        "raza": "Bombay",
+        "edad": 4,
+        "color": "Negro"
+    },
+    {
+        "nombre": "Oreo",
+        "raza": "Scottish Fold",
+        "edad": 3,
+        "color": "Negro y blanco"
+    },
+    {
+        "nombre": "Cleo",
+        "raza": "Abyssinian",
+        "edad": 1,
+        "color": "Rojo y blanco"
+    },
+    {
+        "nombre": "Tiger",
+        "raza": "Oriental Shorthair",
+        "edad": 4,
+        "color": "Atigrado"
+    },
+    {
+        "nombre": "Panda",
+        "raza": "American Shorthair",
+        "edad": 2,
+        "color": "Gris y blanco"
+    },
+    {
+        "nombre": "Daisy",
+        "raza": "Birmano",
+        "edad": 5,
+        "color": "Crema y marrón"
+    },
+    {
+        "nombre": "Rayas",
+        "raza": "Siames",
+        "edad": 2,
+        "color": "Blanco y negro"
+    },
+    {
+        "nombre": "Copito",
+        "raza": "Persa",
+        "edad": 3,
+        "color": "Blanco"
+    },
+    {
+        "nombre": "Shadow",
+        "raza": "Maine Coon",
+        "edad": 5,
+        "color": "Negro"
+    },
+    {
+        "nombre": "Miel",
+        "raza": "Exótico",
+        "edad": 1,
+        "color": "Dorado"
+    },
+    {
+        "nombre": "Pepper",
+        "raza": "Bombay",
+        "edad": 4,
+        "color": "Negro"
+    },
+    {
+        "nombre": "Chispa",
+        "raza": "Bengalí",
+        "edad": 3,
+        "color": "Atigrado"
+    },
+    {
+        "nombre": "Cielo",
+        "raza": "Ragdoll",
+        "edad": 6,
+        "color": "Azul y blanco"
+    },
+    {
+        "nombre": "Buddy",
+        "raza": "British Shorthair",
+        "edad": 2,
+        "color": "Gris"
+    },
+    {
+        "nombre": "Pixie",
+        "raza": "Sphynx",
+        "edad": 1,
+        "color": "Rosa pálido"
+    },
+    {
+        "nombre": "Thor",
+        "raza": "Noruego de Bosque",
+        "edad": 4,
+        "color": "Marrón y negro"
+    }
+]
