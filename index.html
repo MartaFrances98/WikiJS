@@ -117,6 +117,7 @@
     </header>
     <!--Nav-->
 
+    <!-- PRIMERO -->
     <section class="container gy-5 overflow-hidden mt-4">
         <h3 class="text-center mb-4">Operaciones básicas</h3>
         <div class="row justify-content-md-center">
@@ -153,35 +154,83 @@
         </div>
     </section>
 
+    <!-- SEGUNDO -->
     <section class="container gy-5 overflow-hidden mt-4">
-        <h3 class="text-center mb-4">Operaciones básicas</h3>
+        <h3 class="text-center mb-4">Objetos Predefinidos</h3>
         <div class="row justify-content-md-center">
 
             <div class="col-5 text-bg-dark rounded d-flex justify-content-center align-items-center me-auto">
                 <div class="p-3">
-                    <p id="demoOperaciones"></p>
+                    <p id="demoDate()"></p>
                 </div>
             </div>
             <div class="col-6 bg-dark-subtle rounded ">
                 <div class="p-3 text-rigth">
                     <pre>
                         <code class="languaje-js">
- function demoOperaciones() {
-    let num1 = 10;
-    let num2 = 5;
+function demoDate() {
+    let hoy = new Date();
+    let idFecha = document.getElementById('demoDate');
+    idFecha.innerHTML = "Hoy es: " + hoy.toDateString();
+                            }
+                        </code>
+                </pre>
+                </div>
+            </div>
 
-    //Seleccionamos el id del elemento
-    let id = document.getElementById('demoOperaciones');
+        </div>
+    </section>
 
-    //Hacemos la lógica de las operaciones
-    let suma = num1 + num2;
-    let resta = num1 - num2;
+    <!-- TERCERO -->
+    <section class="container gy-5 overflow-hidden mt-4">
+        <h3 class="text-center mb-4">Creación de Objetos y Herencia</h3>
+        <div class="row justify-content-md-center">
+            <div class="col-6 bg-dark-subtle rounded me-auto">
+                <div class="p-3 text-rigth">
+                    <pre>
+                        <code class="languaje-js">
+class Vehiculo {
+    constructor(marca) {
+        this.marca = marca;
+        }
+ }
+                            
+class Coche extends Vehiculo {
+     constructor(marca, modelo) {
+        super(marca);
+        this.modelo = modelo;
+        }
+}
+                        </code>
+                </pre>
+                </div>
+            </div>
+            <div class="col-5 text-bg-dark rounded d-flex justify-content-center align-items-center ">
+                <div class="p-3">
+                    <p id="demoOperaciones"></p>
+                </div>
+            </div>
 
-    //Introduce en html el contenido
-    id.innerHTML = "Si tengo estos dos operandos: " + num1 + " y " + num2 + "&lt;br&gt;" + 
-    num1 + " + " + num2 + " = " + suma + "&lt;br&gt;" 
-    + num1 + " - " + num2 + " = " + resta;
-  }
+        </div>
+    </section>
+
+    <!-- CUARTO -->
+    <section class="container gy-5 overflow-hidden mt-4">
+        <h3 class="text-center mb-4">Manipulación del DOM</h3>
+        <div class="row justify-content-md-center">
+
+            <div class="col-5 text-bg-dark rounded d-flex justify-content-center align-items-center me-auto">
+                <div class="p-3">
+                    <p id="demo"></p>
+                </div>
+            </div>
+            <div class="col-6 bg-dark-subtle rounded ">
+                <div class="p-3 text-rigth">
+                    <pre>
+                        <code class="languaje-js">
+                            "&lt;p id="demo"&gt;Texto original"&lt;/p&gt;
+                            "&lt;button onclick="cambiarTexto()"&gt;Cambiar Texto"&lt;/button&gt;
+                            
                         </code>
                 </pre>
                 </div>
@@ -194,6 +243,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+        <script>
+    function cambiarTexto() {
+        document.getElementById("demo").innerHTML = "Texto cambiado";
+    }
+</script>
 </body>
 
 
@@ -252,5 +306,8 @@
         </div>
     </div>
 </footer>
+
+
+
 
 </html>

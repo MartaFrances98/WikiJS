@@ -1,6 +1,7 @@
 window.onload= function () {
 
-    demoOperaciones()
+    demoOperaciones();
+    demoDate()
 
 }
 
@@ -14,4 +15,24 @@ function demoOperaciones() {
     id.innerHTML = "Si tengo estos dos operandos: " + num1 + " y " + num2 + "<br>" +
         num1 + " + " + num2 + " = " + suma + "<br>" +
         num1 + " - " + num2 + " = " + resta;
+}
+
+function demoDate() {
+    let hoy = new Date();
+    let idFecha = document.getElementById('demoDate');
+    idFecha.innerHTML = "Hoy es: " + hoy.toDateString();
+}
+
+
+class Vehiculo {
+    constructor(marca) {
+        this.marca = marca;
+        }
+ }
+                            
+class Coche extends Vehiculo {
+     constructor(marca, modelo) {
+        super(marca);
+        this.modelo = modelo;
+        }
 }
