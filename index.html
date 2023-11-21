@@ -161,7 +161,7 @@
 
             <div class="col-5 text-bg-dark rounded d-flex justify-content-center align-items-center me-auto">
                 <div class="p-3">
-                    <p id="demoDate()"></p>
+                    <p id="demoDate"></p>
                 </div>
             </div>
             <div class="col-6 bg-dark-subtle rounded ">
@@ -201,13 +201,18 @@ class Coche extends Vehiculo {
         this.modelo = modelo;
         }
 }
+function mostrarInformacionCoche() {
+    let miCoche = new Coche("Toyota", "Corolla");
+    let infoCoche = document.getElementById('mostrarInformacionCoche');
+    infoCoche.innerHTML = "Marca: " + miCoche.marca + ", Modelo: " + miCoche.modelo;
+}
                         </code>
                 </pre>
                 </div>
             </div>
             <div class="col-5 text-bg-dark rounded d-flex justify-content-center align-items-center ">
                 <div class="p-3">
-                    <p id="demoOperaciones"></p>
+                    <p id="mostrarInformacionCoche"></p>
                 </div>
             </div>
 
@@ -221,15 +226,16 @@ class Coche extends Vehiculo {
 
             <div class="col-5 text-bg-dark rounded d-flex justify-content-center align-items-center me-auto">
                 <div class="p-3">
-                    <p id="demo"></p>
+                    <p id="demo">Texto original</p>
                 </div>
             </div>
             <div class="col-6 bg-dark-subtle rounded ">
                 <div class="p-3 text-rigth">
                     <pre>
                         <code class="languaje-js">
-                            "&lt;p id="demo"&gt;Texto original"&lt;/p&gt;
-                            "&lt;button onclick="cambiarTexto()"&gt;Cambiar Texto"&lt;/button&gt;
+"&lt;p id="demo"&gt;Texto original"&lt;/p&gt;
+"&lt;button onclick="cambiarTexto()"&gt;Cambiar Texto"&lt;/button&gt;
+
                             
                         </code>
                 </pre>
@@ -243,11 +249,7 @@ class Coche extends Vehiculo {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-        <script>
-    function cambiarTexto() {
-        document.getElementById("demo").innerHTML = "Texto cambiado";
-    }
-</script>
+
 </body>
 
 

@@ -1,7 +1,9 @@
 window.onload= function () {
 
     demoOperaciones();
-    demoDate()
+    demoDate();
+    mostrarInformacionCoche();
+    cambiarTexto()
 
 }
 
@@ -35,4 +37,14 @@ class Coche extends Vehiculo {
         super(marca);
         this.modelo = modelo;
         }
+}
+
+function mostrarInformacionCoche() {
+    let miCoche = new Coche("Toyota", "Corolla");
+    let infoCoche = document.getElementById('mostrarInformacionCoche');
+    infoCoche.innerHTML = "Marca: " + miCoche.marca + ", Modelo: " + miCoche.modelo;
+}
+
+function cambiarTexto() {
+    document.getElementById("demo").innerHTML = "Texto cambiado";
 }
