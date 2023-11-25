@@ -73,58 +73,6 @@ document.getElementById('mostrarOcultar').addEventListener('click', function() {
 
 
 DOCUMENTOS
-1.estilos
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Tabla Estilizada</title>
-    <style>
-        /* Aquí irán tus estilos CSS */
-    </style>
-</head>
-<body>
-    <table id="miTabla">
-        <tr>
-            <th>Cabecera 1</th>
-            <th>Cabecera 2</th>
-        </tr>
-        <tr>
-            <td>Dato 1</td>
-            <td>Dato 2</td>
-        </tr>
-        <tr>
-            <td>Dato 3</td>
-            <td>Dato 4</td>
-        </tr>
-    </table>
-</body>
-</html>
-
-#miTabla {
-    width: 100%;
-    border-collapse: collapse; /* Elimina el espacio entre bordes */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra para la tabla */
-}
-
-#miTabla th, #miTabla td {
-    border: 1px solid #ddd; /* Bordes para las celdas y cabeceras */
-    padding: 8px; /* Espaciado interno */
-    text-align: left; /* Alineación del texto */
-}
-
-#miTabla th {
-    background-color: #4CAF50; /* Color de fondo para las cabeceras */
-    color: white; /* Color del texto para las cabeceras */
-}
-
-#miTabla tr:nth-child(even) {
-    background-color: #f2f2f2; /* Color de fondo para filas pares */
-}
-
-#miTabla tr:hover {
-    background-color: #ddd; /* Color de fondo al pasar el ratón sobre una fila */
-}
-
 
 1. getElementById
 <div id="miDiv">Hola Mundo</div>
@@ -163,3 +111,21 @@ let items = document.querySelectorAll('.item');
 items.forEach(item => {
     console.log(item.textContent);
 });
+
+METER EN FUNCION COORDENADAS
+  let imagen = document.querySelector("#img_coche");
+  let coordenadas = document.createElement("span");
+  coordenadas.id = "coordenadas";
+  let posicion = document.createTextNode("X:  Y:  ");
+  posicion.id = "posicion";
+  coordenadas.appendChild(posicion);
+  coordenadas.appendChild(document.createElement("br"));
+  coordenadas.style.display = "none";
+  imagen.before(coordenadas);
+  imagen.addEventListener("mousemove", function (e) {
+    coordenadas.style.display = "inline";
+    posicion.nodeValue = "X: " + e.screenX + "Y: " + e.screenY;
+  });
+  imagen.addEventListener("mouseout", function (e) {
+    coordenadas.style.display = "none";
+  });

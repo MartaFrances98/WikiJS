@@ -8,11 +8,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-    localStorage.setItem("clave", "aaaa");
-    const valorAlmacenado = localStorage.getItem("clave");
-    document.getElementById("kuki").textContent = valorAlmacenado;
-});
 
 
 function validarEmail(valor) {
