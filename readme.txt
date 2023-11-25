@@ -148,6 +148,11 @@ document.getElementById('miFormulario').addEventListener('submit', function(even
     alert('Formulario enviado');
 });
 
+
+
+
+
+
 FUNDAMENTOS JAVASCRIPT
 
 1. Tipos de Datos
@@ -171,7 +176,6 @@ let resta = 10 - 5; // Resta
 let multiplicacion = 5 * 2; // Multiplicación
 let division = 10 / 2; // División
 let modulo = 10 % 3; // Módulo (resto)
-
 
 4.Operadores Lógicos
 
@@ -211,6 +215,12 @@ saludar("Marta");
 const sumar = (a, b) => a + b;
 
 console.log(sumar(5, 3));
+
+
+
+
+
+
 
 TIPOS DE DATOS
 1. Ejemplo de Uso de Map
