@@ -82,8 +82,6 @@ function convertirJSON() {
     document.getElementById('jsonString').textContent = jsonStr;
 }
 
-
-
 function demoDate() {
     let hoy = new Date();
     let idFecha = document.getElementById('demoDate');
