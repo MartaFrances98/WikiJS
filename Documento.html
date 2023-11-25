@@ -102,23 +102,64 @@
 
     <!-- SEGUNDO -->
     <section class="container gy-5 overflow-hidden mt-4">
-        <h3 class="text-center mb-4">Operadores basicos</h3>
+        <h3 class="text-center mb-4">Estilos</h3>
         <div class="row justify-content-md-center">
 
             <div class="col-5 text-bg-dark rounded d-flex justify-content-center align-items-center me-auto">
                 <div class="p-3">
-                    <p id="demoDate"></p>
+                    <table id="miTabla">
+                        <tr>
+                            <th>Cabecera 1</th>
+                            <th>Cabecera 2</th>
+                        </tr>
+                        <tr>
+                            <td>Dato 1</td>
+                            <td>Dato 2</td>
+                        </tr>
+                        <tr>
+                            <td>Dato 3</td>
+                            <td>Dato 4</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
             <div class="col-6 bg-dark-subtle rounded ">
                 <div class="p-3 text-rigth">
                     <pre>
                         <code class="languaje-js">
-                            let suma = 5 + 5; // Suma
-                            let resta = 10 - 5; // Resta
-                            let multiplicacion = 5 * 2; // Multiplicación
-                            let division = 10 / 2; // División
-                            let modulo = 10 % 3; // Módulo (resto)
+                            function agregarEstilosTabla() {
+                                let estilos = `
+                                    #miTabla {
+                                        width: 100%;
+                                        border-collapse: collapse;
+                                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                                    }
+                            
+                                    #miTabla th, #miTabla td {
+                                        border: 1px solid #ddd;
+                                        padding: 8px;
+                                        text-align: left;
+                                    }
+                            
+                                    #miTabla th {
+                                        background-color: #4CAF50;
+                                        color: white;
+                                    }
+                            
+                                    #miTabla tr:nth-child(even) {
+                                        background-color: #f2f2f2;
+                                    }
+                            
+                                    #miTabla tr:hover {
+                                        background-color: #ddd;
+                                    }
+                                `;
+                            
+                                let estilo = document.createElement('style');
+                                estilo.type = 'text/css';
+                                estilo.appendChild(document.createTextNode(estilos));
+                                document.head.appendChild(estilo);
+                            }
                         </code>
                 </pre>
                 </div>
@@ -129,7 +170,7 @@
 
     <!-- TERCERO -->
     <section class="container gy-5 overflow-hidden mt-4">
-        <h3 class="text-center mb-4">Iteración de Datos con alert</h3>
+        <h3 class="text-center mb-4">GetElement</h3>
         <div class="row justify-content-md-center">
             <div class="col-6 bg-dark-subtle rounded me-auto">
                 <div class="p-3 text-rigth">

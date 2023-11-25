@@ -72,6 +72,94 @@ document.getElementById('mostrarOcultar').addEventListener('click', function() {
 });
 
 
+DOCUMENTOS
+1.estilos
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabla Estilizada</title>
+    <style>
+        /* Aquí irán tus estilos CSS */
+    </style>
+</head>
+<body>
+    <table id="miTabla">
+        <tr>
+            <th>Cabecera 1</th>
+            <th>Cabecera 2</th>
+        </tr>
+        <tr>
+            <td>Dato 1</td>
+            <td>Dato 2</td>
+        </tr>
+        <tr>
+            <td>Dato 3</td>
+            <td>Dato 4</td>
+        </tr>
+    </table>
+</body>
+</html>
+
+#miTabla {
+    width: 100%;
+    border-collapse: collapse; /* Elimina el espacio entre bordes */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra para la tabla */
+}
+
+#miTabla th, #miTabla td {
+    border: 1px solid #ddd; /* Bordes para las celdas y cabeceras */
+    padding: 8px; /* Espaciado interno */
+    text-align: left; /* Alineación del texto */
+}
+
+#miTabla th {
+    background-color: #4CAF50; /* Color de fondo para las cabeceras */
+    color: white; /* Color del texto para las cabeceras */
+}
+
+#miTabla tr:nth-child(even) {
+    background-color: #f2f2f2; /* Color de fondo para filas pares */
+}
+
+#miTabla tr:hover {
+    background-color: #ddd; /* Color de fondo al pasar el ratón sobre una fila */
+}
 
 
+1. getElementById
+<div id="miDiv">Hola Mundo</div>
+let elemento = document.getElementById('miDiv');
+console.log(elemento.textContent); // Salida: Hola Mundo
 
+2. getElementsByClassName
+<div class="miClase">Elemento 1</div>
+<div class="miClase">Elemento 2</div>
+let elementos = document.getElementsByClassName('miClase');
+for (let elemento of elementos) {
+    console.log(elemento.textContent);
+}
+
+3. getElementsByTagName
+<p>Parrafo 1</p>
+<p>Parrafo 2</p>
+let parrafos = document.getElementsByTagName('p');
+for (let parrafo of parrafos) {
+    console.log(parrafo.textContent);
+}
+
+
+4. querySelector
+let div = document.querySelector('.miDiv');
+console.log(div.textContent); // Salida: Div 1
+ 
+ 
+ 5.querySelectorAll
+ <ul>
+    <li class="item">Item 1</li>
+    <li class="item">Item 2</li>
+    <li class="item">Item 3</li>
+</ul>
+let items = document.querySelectorAll('.item');
+items.forEach(item => {
+    console.log(item.textContent);
+});
