@@ -64,3 +64,220 @@ console.log(localStorage.getItem("clave"));
 fetch('ruta/a/tu/api')
     .then(response => response.json())
     .then(data => console.log(data));
+
+Cambiar Imágenes Utilizando Estructuras de Control (If-Else)
+<img id="miImagen" src="imagen1.jpg" alt="Imagen">
+<button id="cambiarImagen">Cambiar Imagen</button>
+// Evento de clic para cambiar la imagen
+document.getElementById('cambiarImagen').addEventListener('click', function() {
+    var imagen = document.getElementById('miImagen');
+
+    // Estructura de control if-else para cambiar la fuente de la imagen
+    if (imagen.src.endsWith('imagen1.jpg')) {
+        imagen.src = 'imagen2.jpg';
+    } else {
+        imagen.src = 'imagen1.jpg';
+    }
+});
+
+Mostrar/Ocultar Imágenes Utilizando Bucles y Eventos
+
+<div>
+    <img class="imagenes" src="imagen1.jpg" alt="Imagen 1" style="display:none;">
+    <img class="imagenes" src="imagen2.jpg" alt="Imagen 2" style="display:none;">
+    <img class="imagenes" src="imagen3.jpg" alt="Imagen 3" style="display:none;">
+</div>
+<button id="mostrarOcultar">Mostrar/Ocultar Imágenes</button>
+document.getElementById('mostrarOcultar').addEventListener('click', function() {
+    var imagenes = document.getElementsByClassName('imagenes');
+
+    // Bucle para recorrer todas las imágenes y cambiar su visibilidad
+    for (var i = 0; i < imagenes.length; i++) {
+        if (imagenes[i].style.display === 'none') {
+            imagenes[i].style.display = 'block';
+        } else {
+            imagenes[i].style.display = 'none';
+        }
+    }
+});
+
+
+EVENTOS:
+1.Evento click con una Imagen
+ <img id="imagenClickable" src="imagen1.jpg" alt="Haz clic en mí">
+document.getElementById('imagenClickable').addEventListener('click', function() {
+    alert('Hiciste clic en la imagen');
+});
+
+2. Evento mouseover con una Tabla
+<table id="miTabla">
+    <tr><td>Coloca el ratón sobre esta tabla</td></tr>
+</table>
+document.getElementById('miTabla').addEventListener('mouseover', function() {
+    this.style.backgroundColor = 'yellow';
+});
+
+3. Evento mouseout con una Tabla
+<table id="miTabla">
+    <tr><td>Quita el ratón de esta tabla</td></tr>
+</table>
+document.getElementById('miTabla').addEventListener('mouseout', function() {
+    this.style.backgroundColor = '';
+});
+4. Evento load con una Imagen
+<img id="imagenCargada" src="imagen1.jpg" alt="Imagen">
+document.getElementById('imagenCargada').addEventListener('load', function() {
+    console.log('La imagen ha sido cargada');
+});
+5. Evento focus y blur en un Campo de Formulario
+<input type="text" id="miInput" placeholder="Haz clic y luego haz clic fuera">
+document.getElementById('miInput').addEventListener('focus', function() {
+    this.style.backgroundColor = 'lightgreen';
+});
+
+document.getElementById('miInput').addEventListener('blur', function() {
+    this.style.backgroundColor = '';
+});
+6. Evento submit en un Formulario
+<form id="miFormulario">
+    <input type="text" placeholder="Escribe algo aquí">
+    <input type="submit" value="Enviar">
+</form>
+document.getElementById('miFormulario').addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert('Formulario enviado');
+});
+
+FUNDAMENTOS JAVASCRIPT
+
+1. Tipos de Datos
+let numero = 5; // Número
+let cadena = "Hola Mundo"; // Cadena de texto (String)
+let booleano = true; // Booleano (true/false)
+let objeto = { nombre: "Juan", edad: 30 }; // Objeto
+let arreglo = [1, 2, 3, 4, 5]; // Array
+let indefinido; // Indefinido (undefined)
+let nulo = null; // Null
+
+2. Iteración de Datos con alert
+let numeros = [1, 2, 3, 4, 5];
+numeros.forEach(numero => {
+    alert(numero);
+});
+
+3. Operadores Básicos
+let suma = 5 + 5; // Suma
+let resta = 10 - 5; // Resta
+let multiplicacion = 5 * 2; // Multiplicación
+let division = 10 / 2; // División
+let modulo = 10 % 3; // Módulo (resto)
+
+
+4.Operadores Lógicos
+
+let verdadero = true;
+let falso = false;
+
+let and = verdadero && falso; // AND
+let or = verdadero || falso; // OR
+let not = !verdadero; // NOT
+
+5. if...else
+5.2 Ejemplo Tradicional:
+let edad = 20;
+let esMayorDeEdad;
+
+if (edad >= 18) {
+    esMayorDeEdad = true;
+} else {
+    esMayorDeEdad = false;
+}
+
+console.log(esMayorDeEdad);
+5.1 Ejemplo con Operador Ternario:
+let edad = 20;
+let esMayorDeEdad = edad >= 18 ? true : false;
+
+console.log(esMayorDeEdad);
+
+
+6. Tipos de Funciones 
+let saludar = function(nombre) {
+    console.log("Hola " + nombre);
+};
+saludar("Marta");
+
+7. Funciones Flecha
+const sumar = (a, b) => a + b;
+
+console.log(sumar(5, 3));
+
+TIPOS DE DATOS
+1. Ejemplo de Uso de Map
+
+let mapa = new Map();
+
+// Añadir elementos
+mapa.set('clave1', 'valor1');
+mapa.set('clave2', 'valor2');
+
+// Obtener un valor
+console.log(mapa.get('clave1')); // Salida: valor1
+
+// Comprobar si una clave existe
+console.log(mapa.has('clave3')); // Salida: false
+
+// Iterar sobre Map
+mapa.forEach((valor, clave) => {
+    console.log(clave + ': ' + valor);
+});
+
+2. Ejemplo de Uso de Set
+let conjunto = new Set();
+
+// Añadir valores
+conjunto.add('manzana');
+conjunto.add('banana');
+conjunto.add('manzana'); // No se añadirá porque ya existe
+
+// Comprobar si un valor existe
+console.log(conjunto.has('banana')); // Salida: true
+
+// Tamaño del Set
+console.log(conjunto.size); // Salida: 2
+
+// Iterar sobre Set
+conjunto.forEach(valor => {
+    console.log(valor);
+});
+
+3. Ejemplo de Uso de Array
+let frutas = ['manzana', 'banana', 'naranja'];
+
+// Acceder a un elemento del array
+console.log(frutas[1]); // Salida: banana
+
+// Añadir un elemento al final del array
+frutas.push('mango');
+
+// Iterar sobre un array
+frutas.forEach(fruta => {
+    console.log(fruta);
+});
+
+4. Ejemplo de Uso de JSON.stringify()
+let objeto = {
+    nombre: 'Juan',
+    edad: 30,
+    hobbies: ['fútbol', 'leer']
+};
+
+// Convertir el objeto a una cadena JSON
+let jsonStr = JSON.stringify(objeto);
+console.log(jsonStr);
+
+5.Fecha y hora
+
+
+
+

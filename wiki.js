@@ -1,5 +1,5 @@
 window.onload = function () {
-
+    saludar("Marta");
     demoOperaciones();
     demoDate();
     mostrarInformacionCoche();
@@ -8,6 +8,10 @@ window.onload = function () {
 
 }
 
+let saludar = function (nombre) {
+    let mensaje = "Hola " + nombre;
+    document.getElementById("mensajeSaludo").textContent = mensaje;
+};
 
 function demoOperaciones() {
     let num1 = 10;
@@ -99,11 +103,6 @@ function mostrarGatosDeRaza(razaSeleccionada) {
         .catch(error => console.error('Error al cargar los datos de gatos:', error));
 }
 
-let saludar = function (nombre) {
-    let mensaje = "Hola " + nombre;
-    document.getElementById("mensajeSaludo").textContent = mensaje;
-};
-
 document.addEventListener('DOMContentLoaded', function () {
     var formulario = document.getElementById('formulario');
     formulario.addEventListener('submit', function (event) {
@@ -167,8 +166,8 @@ function validarPassHandler(event) {
     let valorPass = event.target.value;
     validarPass(valorPass); // Asegúrate de que esta función esté definida
 }
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('botonCopiar').addEventListener('click', function () {
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('botonCopiar').addEventListener('click', function () {
         // Obtener el texto del elemento div
         var texto = document.getElementById('textoParaCopiar').textContent;
 
