@@ -1,6 +1,8 @@
 window.onload = function () {
     saludar("Marta");
     demoOperaciones();
+    resultadoEdad();
+    flecharessuma();
 }
 
 function tipodatos() {
@@ -17,9 +19,9 @@ function tipodatos() {
     document.getElementById('codigoJS').textContent = contenido;
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function () {
     tipodatos();
-});
+    });
 
 
 let saludar = function (nombre) {
@@ -51,9 +53,9 @@ let modulo = 10 % 3; // Módulo (resto)
     document.getElementById('operadores').textContent = contenido;
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function () {
     operadoresbasicos();
-});
+    });
 
 
 function manejarClick() {
@@ -64,7 +66,8 @@ function manejarClick() {
 
 }
 
-//5.1 Ejemplo Tradicional:
+function resultadoEdad() {
+//Ejemplo Tradicional:
 let edad = 20;
 let esMayorDeEdad;
 
@@ -73,10 +76,23 @@ if (edad >= 18) {
 } else {
     esMayorDeEdad = false;
 }
-console.log(esMayorDeEdad);
 
-//5.2 Ejemplo con Operador Ternario:
+// Seleccionar el elemento y mostrar el resultado
+document.getElementById('resultadoEdad').textContent = "Es mayor de edad: " + esMayorDeEdad;
+
+
+//Ejemplo Operador Ternario
 let edad1 = 20;
-let esMayorDeEdad1 = edad1 >= 18 ? true : false;
+let esMayorDeEdad1= edad >= 18 ? true : false;
 
-console.log(esMayorDeEdad1);
+// Seleccionar el elemento y mostrar el resultado
+document.getElementById('resultadoEdad1').textContent = "Es mayor de edad (ternario): " + esMayorDeEdad1;
+
+}
+
+function flecharessuma(){
+const sumar = (a, b) => a + b;
+let resultado = sumar(5, 3);
+
+document.getElementById('resultadoSuma').textContent = "Resultado de la suma: " + resultado;
+}

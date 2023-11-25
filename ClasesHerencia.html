@@ -7,46 +7,153 @@
     <title></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="wiki.js"></script>
+    <script src="ClasesHerencia.js"></script>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
-<body>
+<body class="bg-success">
     <header>
-        <nav class="navbar bg-body-tertiary">
-          <div class="container">
-            <a href="index.html" class="navbar-brand" >
-              <img src="./img/house-solid.svg" alt="Bootstrap" width="30" height="24">
-            </a>
-          </div>
+        <nav class="navbar navbar-dark bg-dark ">
+            <div class="container-fluid" id="top">
+                <a class="navbar-brand" href="">Wiki JS</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                    aria-labelledby="offcanvasDarkNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
+                            <span href="./img/capsule.svg">
+                                <i class="bi bi-capsule"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-capsule" viewBox="0 0 16 16">
+                                    <path
+                                        d="M1.828 8.9 8.9 1.827a4 4 0 1 1 5.657 5.657l-7.07 7.071A4 4 0 1 1 1.827 8.9Zm9.128.771 2.893-2.893a3 3 0 1 0-4.243-4.242L6.713 5.429l4.243 4.242Z" />
+                                </svg>
+                            </span>
+                        </h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    1. LENGUAJE JAVASCRIPT
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark"
+                                    class=" d-flex flex-column gap-2 simple-list-example-scrollspy text-center"
+                                    id="simple-list-example">
+                                    <li><a class="p-1 rounded" href="./FundamentosJS.html"
+                                            class="dropdown-item">FUNDAMENTOS DE
+                                            JAVASCRIPT</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="p-1 rounded" href="./TipoDatos.html" class="dropdown-item">TIPOS DE
+                                            DATOS
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="p-1 rounded" href="./ClasesHerencia.html" class="dropdown-item">CLASES
+                                            Y
+                                            HERENCIA
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    2. EL NAVEGADOR
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark"
+                                    class=" d-flex flex-column gap-2 simple-list-example-scrollspy text-center"
+                                    id="simple-list-example">
+                                    <li><a class="p-1 rounded" href="./Documento.html" class="dropdown-item">
+                                            DOCUMENTO</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="p-1 rounded" href="./Eventos.html" class="dropdown-item">GENERADORES
+                                            EVENTOS
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    3. ARTICULOS ADICIONALES
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark"
+                                    class=" d-flex flex-column gap-2 simple-list-example-scrollspy text-center"
+                                    id="simple-list-example">
+                                    <li><a class="p-1 rounded" href="./SolicitudRed.html"
+                                            class="dropdown-item">SOLICITUD DE RED</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="p-1 rounded" href="./AlmacenadoNav.html"
+                                            class="dropdown-item">ALMACENADO DE DATOS EN EL NAVEGADOR
+                                        </a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="p-1 rounded" href="./ComponentesWeb.html"
+                                            class="dropdown-item">COMPONENTES WEB</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </nav>
-    
-      </header>
+    </header>
+    <!--Nav-->
 
     <!-- PRIMERO -->
     <section class="container gy-5 overflow-hidden mt-4">
-        <h3 class="text-center mb-4">Tipos de Datos</h3>
+        <h3 class="text-center mb-4">Clases y herencias</h3>
         <div class="row justify-content-md-center">
             <div class="col-6 bg-dark-subtle rounded me-auto">
                 <div class="p-3 text-rigth">
-                        <p id=""></p>
                     <pre>
                         <code class="languaje-js" id="textoParaCopiar">
-                            let numero = 5; // Número
-                            let cadena = "Hola Mundo"; // Cadena de texto (String)
-                            let booleano = true; // Booleano (true/false)
-                            let objeto = { nombre: "Juan", edad: 30 }; // Objeto
-                            let arreglo = [1, 2, 3, 4, 5]; // Array
-                            let indefinido; // Indefinido (undefined)
-                            let nulo = null; // Null
+                            class Vehiculo {
+                                constructor(marca) {
+                                    this.marca = marca;
+                                }
+                            }
+                            
+                            class Coche extends Vehiculo {
+                                constructor(marca, modelo) {
+                                    super(marca);
+                                    this.modelo = modelo;
+                                }
+                            }
+                            
+                            function mostrarInformacionCoche() {
+                                let miCoche = new Coche("Toyota", "Corolla");
+                                let infoCoche = document.getElementById('mostrarInformacionCoche');
+                                infoCoche.innerHTML = "Marca: " + miCoche.marca + ", Modelo: " + miCoche.modelo;
+                            }
                         </code>
                 </pre>
                 </div>
             </div>
             <div class="col-5 text-bg-dark rounded d-flex justify-content-center align-items-center ">
                 <div class="p-3">
-                    <p id="demoOperaciones"></p>
+                    <p id="mostrarInformacionCoche"></p>
                 </div>
             </div>
 
@@ -55,23 +162,44 @@
 
     <!-- SEGUNDO -->
     <section class="container gy-5 overflow-hidden mt-4">
-        <h3 class="text-center mb-4">Operadores basicos</h3>
+        <h3 class="text-center mb-4">Clases y Herencias</h3>
         <div class="row justify-content-md-center">
 
             <div class="col-5 text-bg-dark rounded d-flex justify-content-center align-items-center me-auto">
                 <div class="p-3">
-                    <p id="demoDate"></p>
+                    <p id="mostrarInformacionAnimal"></p>
                 </div>
             </div>
             <div class="col-6 bg-dark-subtle rounded ">
                 <div class="p-3 text-rigth">
                     <pre>
                         <code class="languaje-js">
-                            let suma = 5 + 5; // Suma
-                            let resta = 10 - 5; // Resta
-                            let multiplicacion = 5 * 2; // Multiplicación
-                            let division = 10 / 2; // División
-                            let modulo = 10 % 3; // Módulo (resto)
+                            class Animal {
+                                constructor(especie) {
+                                    this.especie = especie;
+                                }
+                            
+                                hacerSonido() {
+                                    return "Algun sonido";
+                                }
+                            }
+                            
+                            class Perro extends Animal {
+                                constructor(nombre) {
+                                    super("Perro");
+                                    this.nombre = nombre;
+                                }
+                            
+                                hacerSonido() {
+                                    return "Guau Guau";
+                                }
+                            }
+                            
+                            function mostrarInformacionAnimal() {
+                                let miPerro = new Perro("Firulais");
+                                let infoAnimal = document.getElementById('mostrarInformacionAnimal');
+                                infoAnimal.innerHTML = "Especie: " + miPerro.especie + ", Nombre: " + miPerro.nombre + ", Sonido: " + miPerro.hacerSonido();
+                            }
                         </code>
                 </pre>
                 </div>
@@ -79,6 +207,54 @@
 
         </div>
     </section>
+
+        <!-- PRIMERO -->
+        <section class="container gy-5 overflow-hidden mt-4">
+            <h3 class="text-center mb-4">Clases y herencias</h3>
+            <div class="row justify-content-md-center">
+                <div class="col-6 bg-dark-subtle rounded me-auto">
+                    <div class="p-3 text-rigth">
+                        <pre>
+                            <code class="languaje-js" id="textoParaCopiar">
+                                class Empleado {
+                                    constructor(nombre, departamento) {
+                                        this.nombre = nombre;
+                                        this.departamento = departamento;
+                                    }
+                                
+                                    presentarse() {
+                                        return "Hola, mi nombre es " + this.nombre + " y trabajo en " + this.departamento;
+                                    }
+                                }
+                                
+                                class Gerente extends Empleado {
+                                    constructor(nombre, departamento, equipo) {
+                                        super(nombre, departamento);
+                                        this.equipo = equipo;
+                                    }
+                                
+                                    presentarse() {
+                                        return super.presentarse() + ". Soy el gerente del equipo " + this.equipo;
+                                    }
+                                }
+                                
+                                function mostrarInformacionEmpleado() {
+                                    let gerente = new Gerente("Ana", "Desarrollo", "Frontend");
+                                    let infoEmpleado = document.getElementById('mostrarInformacionEmpleado');
+                                    infoEmpleado.innerHTML = gerente.presentarse();
+                                }
+                            </code>
+                    </pre>
+                    </div>
+                </div>
+                <div class="col-5 text-bg-dark rounded d-flex justify-content-center align-items-center ">
+                    <div class="p-3">
+                        <p id="mostrarInformacionEmpleado"></p>
+                    </div>
+                </div>
+    
+            </div>
+        </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

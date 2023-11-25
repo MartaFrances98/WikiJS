@@ -13,24 +13,7 @@ function demoDate() {
 }
 
 
-class Vehiculo {
-    constructor(marca) {
-        this.marca = marca;
-    }
-}
 
-class Coche extends Vehiculo {
-    constructor(marca, modelo) {
-        super(marca);
-        this.modelo = modelo;
-    }
-}
-
-function mostrarInformacionCoche() {
-    let miCoche = new Coche("Toyota", "Corolla");
-    let infoCoche = document.getElementById('mostrarInformacionCoche');
-    infoCoche.innerHTML = "Marca: " + miCoche.marca + ", Modelo: " + miCoche.modelo;
-}
 
 function cambiarTexto() {
     document.getElementById("demo").innerHTML = "Texto cambiado";
