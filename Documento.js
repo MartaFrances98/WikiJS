@@ -1,6 +1,5 @@
 window.onload = function () {
     cargarDatosGatos();
-   
 }
 
 function cargarDatosGatos() {
@@ -87,3 +86,61 @@ function agregarEstilosTabla() {
 }
 document.addEventListener('DOMContentLoaded', agregarEstilosTabla);
 
+
+
+// Crear el elemento original
+let divOriginal = document.createElement('div');
+divOriginal.id = 'miDiv';
+divOriginal.textContent = 'Hola Mundo';
+
+// Agregar el elemento original al cuerpo del documento
+document.body.appendChild(divOriginal);
+
+// Ahora que el divOriginal está en el DOM, puedes usar getElementById
+let divOriginalEnDOM = document.getElementById('miDiv');
+
+// Crear el elemento para mostrar el resultado
+let divResultado = document.createElement('div');
+divResultado.id = 'resultado';
+
+// Agregar el elemento de resultado al cuerpo del documento
+document.body.appendChild(divResultado);
+
+// Ahora puedes usar getElementById para acceder al divResultado
+let divResultadoEnDOM = document.getElementById('resultado');
+
+// Copiar el contenido de divOriginal a divResultado
+divResultadoEnDOM.textContent = divOriginalEnDOM.textContent;
+
+
+
+
+let elementos = document.getElementsByClassName('miClase');
+let resultado1 = document.getElementById('resultadoElementos');
+
+for (let elemento of elementos) {
+    resultado1.innerHTML += elemento.textContent + '<br>';
+}
+
+
+
+let parrafos = document.getElementsByTagName('p');
+let resultado2 = document.getElementById('resultadoParrafos');
+
+for (let parrafo of parrafos) {
+    resultado2.innerHTML += parrafo.textContent + '<br>';
+}
+
+
+let div = document.querySelector('.miDiv');
+let resultado = document.getElementById('resultado');
+resultado.textContent = div.textContent;
+
+
+
+let items = document.querySelectorAll('.item');
+let resultado = document.getElementById('resultadoItems');
+
+items.forEach(item => {
+    resultado.innerHTML += item.textContent + '<br>';
+});
