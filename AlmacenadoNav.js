@@ -10,7 +10,7 @@ function crearCookie() {
     var fechaExpiracion = new Date();
     fechaExpiracion.setTime(fechaExpiracion.getTime() + (7 * 24 * 60 * 60 * 1000));
     document.cookie = "nombreUsuario=Marta; expires=" + fechaExpiracion.toUTCString() + "; path=/";
-    console.log(document.cookie); // Agregado para depuración
+
 }
 
 function obtenerCookie(nombre) {
@@ -60,8 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
     solicitudDB.onsuccess = function(event) {
         var db = event.target.result;
         var transaccion = db.transaction("login", "readwrite");
-        var objectStore = transaccion.objectStore("login");
-    
+        var objectStore = transaccion.objectStore("login")   
         var solicitudAgregar = objectStore.add({ id: 1, nombre: "Marta", email: "marta@example.com" });
         solicitudAgregar.onsuccess = function(event) {
             document.getElementById('resultadoDB').textContent += "Datos agregados a la base de datos\n";

@@ -67,7 +67,7 @@ fetch('https://api.covidtracking.com/v2/us/daily/2021-01-02/simple.json')
         document.getElementById('datosCovid').textContent = 'Error al cargar los datos';
     });
 
-    fetch('https://api.example.com/data', {
+    fetch('https://api.covidtracking.com/v2/us/daily/2021-01-02/simple.json', {
         method: 'GET'
     })
     .then(response => response.json())
@@ -78,7 +78,7 @@ fetch('https://api.covidtracking.com/v2/us/daily/2021-01-02/simple.json')
         document.getElementById('resultadoFetch').textContent = 'Error al obtener datos: ' + error;
     });
     
-    fetch('https://api.example.com/submit-data', {
+    fetch('https://api.covidtracking.com/v2/us/daily/2021-01-02/simple.json', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
