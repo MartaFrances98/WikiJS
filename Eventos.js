@@ -169,3 +169,16 @@ function agregarEvento() {
 }
 
 
+document.getElementById('mostrarOcultar').addEventListener('click', function() {
+    var imagenes = document.getElementsByClassName('imagenes');
+
+    for (var i = 0; i < imagenes.length; i++) {
+        if (imagenes[i].style.display === 'none') {
+            imagenes[i].style.display = 'block';
+        } else {
+            imagenes[i].style.display = 'none';
+        }
+    }
+});
+
+
