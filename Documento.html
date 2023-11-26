@@ -12,13 +12,99 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
-<body>
+<body class="bg-success">
     <header>
-        <nav class="navbar bg-body-tertiary">
-            <div class="container">
-                <a href="index.html" class="navbar-brand">
-                    <img src="./img/house-solid.svg" alt="Bootstrap" width="30" height="24">
-                </a>
+        <nav class="navbar navbar-dark bg-dark ">
+            <div class="container-fluid" id="top">
+                <a class="navbar-brand" href="./index.html">Wiki JS</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                    aria-labelledby="offcanvasDarkNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
+                        
+                            </span>
+                        </h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    1. LENGUAJE JAVASCRIPT
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark"
+                                    class=" d-flex flex-column gap-2 simple-list-example-scrollspy text-center"
+                                    id="simple-list-example">
+                                    <li><a class="p-1 rounded" href="./FundamentosJS.html"
+                                            class="dropdown-item">FUNDAMENTOS DE
+                                            JAVASCRIPT</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="p-1 rounded" href="./TipoDatos.html" class="dropdown-item">TIPOS DE
+                                            DATOS
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="p-1 rounded" href="./ClasesHerencia.html" class="dropdown-item">CLASES
+                                            Y
+                                            HERENCIA
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    2. EL NAVEGADOR
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark"
+                                    class=" d-flex flex-column gap-2 simple-list-example-scrollspy text-center"
+                                    id="simple-list-example">
+                                    <li><a class="p-1 rounded" href="./Documento.html" class="dropdown-item">
+                                            DOCUMENTO</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="p-1 rounded" href="./Eventos.html" class="dropdown-item">GENERADORES
+                                            EVENTOS
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    3. ARTICULOS ADICIONALES
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark"
+                                    class=" d-flex flex-column gap-2 simple-list-example-scrollspy text-center"
+                                    id="simple-list-example">
+                                    <li><a class="p-1 rounded" href="./SolicitudRed.html"
+                                            class="dropdown-item">SOLICITUD DE RED</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="p-1 rounded" href="./AlmacenadoNav.html"
+                                            class="dropdown-item">ALMACENADO DE DATOS EN EL NAVEGADOR
+                                        </a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </nav>
 
