@@ -194,7 +194,7 @@
         emailInput.classList.remove("inputValido");
         pass.setAttribute("disabled", true);
     }
-}
+
                         </code>
                 </pre>
                 </div>
@@ -203,104 +203,7 @@
         </div>
     </section>
 
-    <!-- TERCERO -->
-    <section class="container gy-5 overflow-hidden mt-4">
-        <h3 class="text-center mb-4">Uso de Array</h3>
-        <div class="row justify-content-md-center">
-            <div class="col-6 bg-dark-subtle rounded me-auto">
-                <div class="p-3 text-rigth">
-                    <pre>
-                        <code class="languaje-js">
-                            function array() {
-                                let frutas = ['manzana', 'banana', 'naranja'];
-                                let divInfoArray = document.getElementById('infoArray');
-                                divInfoArray.innerHTML = '';
-                            
-                                // Acceder a un elemento del array y mostrarlo
-                                divInfoArray.innerHTML += 'Elemento en índice 1: ' + frutas[1] + '<br>'; // Mostrar banana
-                            
-                                // Añadir un elemento al final del array
-                                frutas.push('mango');
-                            
-                                // Iterar sobre un array y mostrar cada elemento
-                                frutas.forEach(fruta => {
-                                    divInfoArray.innerHTML += 'Fruta: ' + fruta + '<br>';
-                                });
-                            }
-                        </code>
-                </pre>
-                </div>
-            </div>
-            <div class="col-5 text-bg-dark rounded d-flex justify-content-center align-items-center ">
-                <div class="p-3">
-                    <p id="infoArray"></p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- CUARTO -->
-    <section class="container gy-5 overflow-hidden mt-4">
-        <h3 class="text-center mb-4">Operadores logicos</h3>
-        <div class="row justify-content-md-center">
-
-            <div class="col-5 text-bg-dark rounded d-flex justify-content-center align-items-center me-auto">
-                <div class="p-3">
-                    <pre id="jsonString"></pre>
-                </div>
-            </div>
-            <div class="col-6 bg-dark-subtle rounded ">
-                <div class="p-3 text-rigth">
-                    <pre>
-                        <code class="languaje-js">
-                            function convertirJSON() {
-                                let objeto = {
-                                    nombre: 'Juan',
-                                    edad: 30,
-                                    hobbies: ['fútbol', 'leer']
-                                };
-                            
-                                // Convertir el objeto a una cadena JSON
-                                let jsonStr = JSON.stringify(objeto, null, 2); // El segundo argumento añade formato
-                            
-                                // Actualizar el elemento del DOM
-                                document.getElementById('jsonString').textContent = jsonStr;
-                            }                    
-                        </code>
-                </pre>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- QUINTO -->
-    <section class="container gy-5 overflow-hidden mt-4">
-        <h3 class="text-center mb-4">if...else</h3>
-        <div class="row justify-content-md-center">
-            <div class="col-6 bg-dark-subtle rounded me-auto">
-                <div class="p-3 text-rigth">
-                    <pre>
-                        <code class="languaje-js">
-                            function demoDate() {
-                                let hoy = new Date();
-                                let idFecha = document.getElementById('demoDate');
-                                idFecha.innerHTML = "Hoy es: " + hoy.toDateString();
-                            }
-                        </code>
-                </pre>
-                </div>
-            </div>
-            <div class="col-5 text-bg-dark rounded d-flex justify-content-center align-items-center ">
-                <div class="p-3">
-                    <p id="demoDate"></p>
-
-                </div>
-            </div>
-
-        </div>
-    </section>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

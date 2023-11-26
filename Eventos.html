@@ -235,35 +235,37 @@
     </section>
 
     <!-- QUINTO -->
-    <section class="container gy-5 overflow-hidden mt-4">
-        <h3 class="text-center mb-4">Evento submit en un Formulario</h3>
+      <section class="container gy-5 overflow-hidden mt-4">
+        <h3 class="text-center mb-4">Evento coordenadas</h3>
         <div class="row justify-content-md-center">
             <div class="col-6 bg-dark-subtle rounded me-auto">
                 <div class="p-3 text-rigth">
                     <pre>
                         <code class="languaje-js">
-
-                        document.addEventListener('DOMContentLoaded', function () {
-                           var formulario = document.getElementById('formulario');
-                           formulario.addEventListener('submit', function (event) {
-                               event.preventDefault();
-                               let input = document.getElementById("nombre").value;
-                               let mensaje = "Texto recibido: " + input;
-                               document.getElementById("formularioresponse").textContent = mensaje;
-                           });
-                       });
-                        </code>
+                            document.getElementById('mostrarOcultar').addEventListener('click', function() {
+                                var imagenes = document.getElementsByClassName('imagenes');
+                            
+                                // Bucle para recorrer todas las imágenes y cambiar su visibilidad
+                                for (var i = 0; i < imagenes.length; i++) {
+                                    if (imagenes[i].style.display === 'none') {
+                                        imagenes[i].style.display = 'block';
+                                    } else {
+                                        imagenes[i].style.display = 'none';
+                                    }
+                                }
+                            });
+                    </code>
                 </pre>
                 </div>
             </div>
             <div class="col-5 text-bg-dark rounded d-flex justify-content-center align-items-center ">
                 <div class="p-3">
-                    <form id="formulario">
-                        <input type="text" id="nombre" required>
-                        <button type="submit" value="Enviar">ENVIAR </button>
-                    </form>
-                    <p id="formularioresponse"></p>
-
+                    <div>
+                        <img class="imagenes" src="./img/gatoenfadado.jpg" alt="Imagen 1" style="display: none; width: 25%;">
+                        <img class="imagenes" src="./img/gatoenfadado.jpg" alt="Imagen 2" style="display: block; width: 25%;">
+                        <img class="imagenes" src="./img/gatoenfadado.jpg" alt="Imagen 3" style="display: none; width: 25%;"><br>
+                    </div>
+                    <button id="mostrarOcultar">Mostrar/Ocultar Imágenes</button>
                 </div>
             </div>
 
@@ -408,43 +410,7 @@
 
         </div>
     </section>
-        <!-- SEPTIMO -->
-        <section class="container gy-5 overflow-hidden mt-4">
-            <h3 class="text-center mb-4">Evento coordenadas</h3>
-            <div class="row justify-content-md-center">
-                <div class="col-6 bg-dark-subtle rounded me-auto">
-                    <div class="p-3 text-rigth">
-                        <pre>
-                            <code class="languaje-js">
-                                document.getElementById('mostrarOcultar').addEventListener('click', function() {
-                                    var imagenes = document.getElementsByClassName('imagenes');
-                                
-                                    // Bucle para recorrer todas las imágenes y cambiar su visibilidad
-                                    for (var i = 0; i < imagenes.length; i++) {
-                                        if (imagenes[i].style.display === 'none') {
-                                            imagenes[i].style.display = 'block';
-                                        } else {
-                                            imagenes[i].style.display = 'none';
-                                        }
-                                    }
-                                });
-                        </code>
-                    </pre>
-                    </div>
-                </div>
-                <div class="col-5 text-bg-dark rounded d-flex justify-content-center align-items-center ">
-                    <div class="p-3">
-                        <div>
-                            <img class="imagenes" src="./img/gatoenfadado.jpg" alt="Imagen 1" style="display: none; width: 25%;">
-                            <img class="imagenes" src="./img/gatoenfadado.jpg" alt="Imagen 2" style="display: block; width: 25%;">
-                            <img class="imagenes" src="./img/gatoenfadado.jpg" alt="Imagen 3" style="display: none; width: 25%;"><br>
-                        </div>
-                        <button id="mostrarOcultar">Mostrar/Ocultar Imágenes</button>
-                    </div>
-                </div>
-    
-            </div>
-        </section>
+      
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

@@ -1,54 +1,10 @@
 window.onload = function () {
-    cargarDatosGatos();
-}
-function cargarDatosGatos() {
-    fetch('gatos.json')
-        .then(response => response.json())
-        .then(datosGatos => {
-            llenarSelectorConRazas(datosGatos);
-        })
-        .catch(error => console.error('Error al cargar los datos de gatos:', error));
+  
 }
 
-function llenarSelectorConRazas(datosGatos) {
-    const selectorRaza = document.getElementById('selectorRaza');
-    const razas = [...new Set(datosGatos.map(gato => gato.raza))];
-
-    razas.forEach(raza => {
-        const opcion = document.createElement('option');
-        opcion.value = raza;
-        opcion.textContent = raza;
-        selectorRaza.appendChild(opcion);
-    });
+function cambiarTexto() {
+    document.getElementById("demo").innerHTML = "Texto cambiado";
 }
-
-function mostrarGatosDeRaza(razaSeleccionada) {
-    fetch('gatos.json')
-        .then(response => response.json())
-        .then(datosGatos => {
-            const gatosFiltrados = datosGatos.filter(gato => gato.raza === razaSeleccionada);
-            const tabla = document.getElementById('tablaGatos');
-            tabla.innerHTML = ''; // Limpiar tabla anterior
-
-            if (gatosFiltrados.length) {
-                const encabezado = tabla.insertRow();
-                ['Nombre', 'Raza', 'Edad', 'Color'].forEach(texto => {
-                    const celda = encabezado.insertCell();
-                    celda.textContent = texto;
-                });
-
-                gatosFiltrados.forEach(gato => {
-                    const fila = tabla.insertRow();
-                    Object.values(gato).forEach(texto => {
-                        const celda = fila.insertCell();
-                        celda.textContent = texto;
-                    });
-                });
-            }
-        })
-        .catch(error => console.error('Error al cargar los datos de gatos:', error));
-}
-
 
 function agregarEstilosTabla() {
     let estilos = `
@@ -86,23 +42,31 @@ function agregarEstilosTabla() {
 }
 document.addEventListener('DOMContentLoaded', agregarEstilosTabla);
 
-
-
-
 document.addEventListener('DOMContentLoaded', (event) => {
+    // Crear el elemento original
     let divOriginal = document.createElement('div');
     divOriginal.id = 'miDiv';
     divOriginal.style.visibility = 'hidden'; 
     divOriginal.textContent = 'Hola Mundo';
-    document.body.appendChild(divOriginal);
 
+    // Buscar el div contenedor y agregarle el div original como hijo
+    let contenedor = document.getElementById('contenedor');
+    contenedor.appendChild(divOriginal);
+
+    // Obtener el div original desde el DOM
     let divOriginalEnDOM = document.getElementById('miDiv');
 
+    // Crear el elemento para mostrar el resultado
     let divResultado = document.createElement('div');
-    divResultado.id = 'resultado';
-    document.body.appendChild(divResultado);
+    divResultado.id = 'resultadoz';
 
-    let divResultadoEnDOM = document.getElementById('resultado');
+    // Agregar el div de resultado al mismo contenedor
+    contenedor.appendChild(divResultado);
+
+    // Obtener el div resultado desde el DOM
+    let divResultadoEnDOM = document.getElementById('resultadoz');
+
+    // Copiar el contenido del div original al div de resultado
     divResultadoEnDOM.textContent = divOriginalEnDOM.textContent;
 });
 

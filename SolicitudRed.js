@@ -78,21 +78,3 @@ fetch('https://api.covidtracking.com/v2/us/daily/2021-01-02/simple.json')
         document.getElementById('resultadoFetch').textContent = 'Error al obtener datos: ' + error;
     });
     
-    fetch('https://api.covidtracking.com/v2/us/daily/2021-01-02/simple.json', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            key1: 'value1',
-            key2: 'value2'
-        })
-    })
-    .then(response => response.json())
-    .then(data => {
-        document.getElementById('resultadoFetch').textContent += '\nDatos enviados con éxito: ' + JSON.stringify(data, null, 2);
-    })
-    .catch((error) => {
-        document.getElementById('resultadoFetch').textContent += '\nError al enviar datos: ' + error;
-    });
-    
