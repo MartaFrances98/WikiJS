@@ -175,6 +175,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <input type="password" id="inputpassword" placeholder="Contraseña" disabled>
                         <button type="submit">Enviar</button>
                     </form>
+                    <div id="resultado"></div>
                 </div>
             </div>
             <div class="col-6 bg-dark-subtle rounded ">
@@ -235,7 +236,6 @@ function validarPassHandler(event) {
         document.body.removeChild(textarea);
     });
 });
-
                         </code>
                 </pre>
                 <button onclick="copiarCodigo(this.previousElementSibling)">Copiar Código</button>

@@ -24,9 +24,6 @@ function validarEmail(valor) {
         emailInput.classList.remove("inputInvalido");
         pass.removeAttribute("disabled");
 
-        // Asegurarse de que no se añadan múltiples event listeners
-        pass.removeEventListener("input", validarPassHandler);
-        pass.addEventListener("input", validarPassHandler);
     } else {
         console.log("La dirección de correo electrónico no es válida");
         emailInput.classList.add("inputInvalido");
@@ -35,13 +32,21 @@ function validarEmail(valor) {
     }
 }
 
-function validarPassHandler(event) {
-    let valorPass = event.target.value;
-    validarPass(valorPass); // Asegúrate de que esta función esté definida
-}
+document.addEventListener('DOMContentLoaded', function () {
+    var formulario = document.getElementById('miFormulario'); // Asegúrate de que este es el ID correcto de tu formulario
+
+    formulario.addEventListener('submit', function (event) {
+        event.preventDefault(); // Previene el envío por defecto del formulario
+
+        var email = document.querySelector("#inputEmail").value;
+        var password = document.querySelector("#inputpassword").value; // Asegúrate de que este es el ID correcto de tu campo de contraseña
+
+        var resultadoDiv = document.getElementById('resultado'); // Asegúrate de tener un elemento con ID 'resultado' en tu HTML
+        resultadoDiv.textContent = 'Email: ' + email + ' / Contraseña: ' + password;
+    });
+});
+
     document.addEventListener('DOMContentLoaded', function () {
-        document.getElementById('botonCopiar').addEventListener('click', function () {
-        // Obtener el texto del elemento div
         var texto = document.getElementById('textoParaCopiar').textContent;
 
         // Crear un elemento textarea temporal
@@ -64,7 +69,7 @@ function validarPassHandler(event) {
         // Eliminar el textarea temporal
         document.body.removeChild(textarea);
     });
-});
+
 
 function copiarCodigo(elementoCode) {
     // Crear un rango y un objeto de selección para seleccionar el texto

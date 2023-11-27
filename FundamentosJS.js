@@ -4,6 +4,8 @@ window.onload = function () {
     resultadoEdad();
     flecharessuma();
     operadoreslogicos();
+    tipodatos();
+    operadoresbasicos();
 }
 
 function tipodatos() {
