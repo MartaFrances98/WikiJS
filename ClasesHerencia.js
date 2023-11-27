@@ -1,28 +1,32 @@
+// Al cargar la ventana, he mostrado la información de un coche, un animal y un empleado
 window.onload = function () {
     mostrarInformacionCoche();
     mostrarInformacionAnimal();
     mostrarInformacionEmpleado();
 }
-
+//1.
+// He definido una clase Vehiculo con una marca
 class Vehiculo {
     constructor(marca) {
         this.marca = marca;
     }
 }
-
+// He extendido la clase Vehiculo a Coche, añadiendo un modelo
 class Coche extends Vehiculo {
     constructor(marca, modelo) {
         super(marca);
         this.modelo = modelo;
     }
 }
-
+// He mostrado la información de un coche en el DOM
 function mostrarInformacionCoche() {
     let miCoche = new Coche("Toyota", "Corolla");
     let infoCoche = document.getElementById('mostrarInformacionCoche');
     infoCoche.innerHTML = "Marca: " + miCoche.marca + ", Modelo: " + miCoche.modelo;
 }
 
+//2.
+// He definido una clase Animal con una especie y un método para hacer un sonido
 class Animal {
     constructor(especie) {
         this.especie = especie;
@@ -32,7 +36,7 @@ class Animal {
         return "Algun sonido";
     }
 }
-
+// He extendido la clase Animal a Perro, con un nombre y un sonido específico
 class Perro extends Animal {
     constructor(nombre) {
         super("Perro");
@@ -43,13 +47,15 @@ class Perro extends Animal {
         return "Guau Guau";
     }
 }
-
+// He mostrado la información de un perro en el DOM
 function mostrarInformacionAnimal() {
     let miPerro = new Perro("Firulais");
     let infoAnimal = document.getElementById('mostrarInformacionAnimal');
     infoAnimal.innerHTML = "Especie: " + miPerro.especie + ", Nombre: " + miPerro.nombre + ", Sonido: " + miPerro.hacerSonido();
 }
 
+//3.
+// He definido una clase Empleado con un nombre y un departamento
 class Empleado {
     constructor(nombre, departamento) {
         this.nombre = nombre;
