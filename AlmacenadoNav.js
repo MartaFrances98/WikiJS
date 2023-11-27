@@ -20,6 +20,7 @@ function obtenerCookie(nombre) {
     // He declarado variables para procesar las cookies
     var nombreIgual = nombre + "=";
     var arrayCookies = document.cookie.split(';');
+    //He creado un bucle for para que de tantas vueltas como el valor de la longitud de arrayCookies
     for(var i = 0; i < arrayCookies.length; i++) {
         var c = arrayCookies[i];
         while (c.charAt(0) === ' ') c = c.substring(1);

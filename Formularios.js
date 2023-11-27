@@ -1,74 +1,89 @@
 
+// Función que se ejecuta después de que se haya cargado completamente el contenido del DOM
 document.addEventListener('DOMContentLoaded', function () {
     var formulario = document.getElementById('formulario');
     formulario.addEventListener('submit', function (event) {
+        // He prevenido el comportamiento por defecto del formulario
         event.preventDefault();
         let input = document.getElementById("nombre").value;
         let mensaje = "Texto recibido: " + input;
-        document.getElementById("formularioresponse").textContent = mensaje;
+        // He mostrado el mensaje recibido
+        document.getElementById("formularioresponse").textContent = mensaje; 
     });
 });
 
-
-
+// Función para validar el email
 function validarEmail(valor) {
     let emailInput = document.querySelector("#inputEmail");
     let pass = document.querySelector("#inputpassword");
 
-    // Expresión regular para validar el correo electrónico
+    // He definido una expresión regular para validar el correo electrónico
     const regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
+    // He verificado si el email es válido
     if (regexEmail.test(valor)) {
         console.log("La dirección de correo electrónico es válida");
-        emailInput.classList.add("inputValido");
-        emailInput.classList.remove("inputInvalido");
-        pass.removeAttribute("disabled");
+        // He añadido la clase para un input válido
+        emailInput.classList.add("inputValido"); 
+        // He eliminado la clase de input inválido
+        emailInput.classList.remove("inputInvalido"); 
+       // He habilitado el campo de contraseña 
+        pass.removeAttribute("disabled"); 
 
     } else {
         console.log("La dirección de correo electrónico no es válida");
-        emailInput.classList.add("inputInvalido");
-        emailInput.classList.remove("inputValido");
-        pass.setAttribute("disabled", true);
+        // He añadido la clase para un input inválido
+        emailInput.classList.add("inputInvalido"); 
+        // He eliminado la clase de input válido
+        emailInput.classList.remove("inputValido"); 
+        // He deshabilitado el campo de contraseña
+        pass.setAttribute("disabled", true); 
     }
 }
 
+// Función que se ejecuta después de que se haya cargado completamente el contenido del DOM para otro formulario
 document.addEventListener('DOMContentLoaded', function () {
-    var formulario = document.getElementById('miFormulario'); // Asegúrate de que este es el ID correcto de tu formulario
+    // He obtenido el formulario por su ID
+    var formulario = document.getElementById('miFormulario'); 
 
     formulario.addEventListener('submit', function (event) {
-        event.preventDefault(); // Previene el envío por defecto del formulario
-
+        // He prevenido el comportamiento por defecto del formulario
+        event.preventDefault(); 
+        // He obtenido los valores de email y contraseña
         var email = document.querySelector("#inputEmail").value;
-        var password = document.querySelector("#inputpassword").value; // Asegúrate de que este es el ID correcto de tu campo de contraseña
-
-        var resultadoDiv = document.getElementById('resultado'); // Asegúrate de tener un elemento con ID 'resultado' en tu HTML
-        resultadoDiv.textContent = 'Email: ' + email + ' / Contraseña: ' + password;
+        var password = document.querySelector("#inputpassword").value; 
+        // He obtenido el elemento para mostrar resultados
+        var resultadoDiv = document.getElementById('resultado'); 
+        // He mostrado los resultados
+        resultadoDiv.textContent = 'Email: ' + email + ' / Contraseña: ' + password; 
     });
 });
 
-    document.addEventListener('DOMContentLoaded', function () {
-        var texto = document.getElementById('textoParaCopiar').textContent;
+// Función para copiar un texto al portapapeles
+document.addEventListener('DOMContentLoaded', function () {
+     // He obtenido el texto a copiar
+    var texto = document.getElementById('textoParaCopiar').textContent; 
 
-        // Crear un elemento textarea temporal
-        var textarea = document.createElement('textarea');
-        textarea.textContent = texto;
-        document.body.appendChild(textarea);
+    // He creado un elemento textarea temporal
+    var textarea = document.createElement('textarea');
+    textarea.textContent = texto;
+    document.body.appendChild(textarea);
 
-        // Seleccionar el texto del textarea
-        textarea.select();
+    // He seleccionado el texto del textarea
+    textarea.select();
 
-        try {
-            // Copiar el texto seleccionado
-            var exitoso = document.execCommand('copy');
-            var msg = exitoso ? 'exitoso' : 'no exitoso';
-            console.log('Copiado ' + msg);
-        } catch (err) {
-            console.log('Oops, no se pudo copiar');
-        }
+    try {
+        // He intentado copiar el texto seleccionado
+        var exitoso = document.execCommand('copy');
+        var msg = exitoso ? 'exitoso' : 'no exitoso';
+        console.log('Copiado ' + msg);
+    } catch (err) {
+        console.log('Oops, no se pudo copiar');
+    }
 
-        // Eliminar el textarea temporal
-        document.body.removeChild(textarea);
-    });
+    // He eliminado el textarea temporal
+    document.body.removeChild(textarea);
+});
 
 
 function copiarCodigo(elementoCode) {
@@ -76,8 +91,10 @@ function copiarCodigo(elementoCode) {
     const rango = document.createRange();
     const selección = window.getSelection();
     rango.selectNodeContents(elementoCode);
-    selección.removeAllRanges(); // Limpia selecciones existentes
-    selección.addRange(rango); // Añade el rango que contiene el texto del elemento code
+    // Limpia selecciones existentes
+    selección.removeAllRanges(); 
+// Añade el rango que contiene el texto del elemento code
+    selección.addRange(rango); 
 
     try {
         // Ejecutar el comando de copiado

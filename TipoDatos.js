@@ -1,3 +1,4 @@
+// Función que se ejecuta al cargar la ventana
 window.onload = function () {
     demoDate();
     map();
@@ -6,32 +7,34 @@ window.onload = function () {
     convertirJSON();
 }
 
+// Función para demostrar el uso de Map
 function map() {
     let mapa = new Map();
 
-    // Añadir elementos
+    // He añadido elementos al mapa
     mapa.set('clave1', 'valor1');
     mapa.set('clave2', 'valor2');
 
     let divInfoMapa = document.getElementById('infoMapa');
     divInfoMapa.innerHTML = '';
 
-    // Obtener un valor y mostrarlo
-    divInfoMapa.innerHTML += 'Valor de clave1: ' + mapa.get('clave1') + '<br>'; // Mostrar valor1
+    // He obtenido un valor y lo he mostrado
+    divInfoMapa.innerHTML += 'Valor de clave1: ' + mapa.get('clave1') + '<br>';
 
-    // Comprobar si una clave existe y mostrarlo
-    divInfoMapa.innerHTML += 'Existe clave3: ' + mapa.has('clave3') + '<br>'; // Mostrar false
+    // He comprobado si una clave existe y lo he mostrado
+    divInfoMapa.innerHTML += 'Existe clave3: ' + mapa.has('clave3') + '<br>';
 
-    // Iterar sobre Map y mostrar cada par clave-valor
+    // He iterado sobre Map y he mostrado cada par clave-valor
     mapa.forEach((valor, clave) => {
         divInfoMapa.innerHTML += clave + ': ' + valor + '<br>';
     });
 }
 
+// Función para demostrar el uso de Set
 function set() {
     let conjunto = new Set();
 
-    // Añadir valores
+    // He añadido valores al conjunto
     conjunto.add('manzana');
     conjunto.add('banana');
     conjunto.add('manzana'); // No se añadirá porque ya existe
@@ -39,35 +42,37 @@ function set() {
     let divInfoConjunto = document.getElementById('infoConjunto');
     divInfoConjunto.innerHTML = '';
 
-    // Comprobar si un valor existe y mostrarlo
-    divInfoConjunto.innerHTML += 'Existe banana: ' + conjunto.has('banana') + '<br>'; // Mostrar true
+    // He comprobado si un valor existe y lo he mostrado
+    divInfoConjunto.innerHTML += 'Existe banana: ' + conjunto.has('banana') + '<br>';
 
-    // Tamaño del Set y mostrarlo
-    divInfoConjunto.innerHTML += 'Tamaño del conjunto: ' + conjunto.size + '<br>'; // Mostrar 2
+    // He mostrado el tamaño del Set
+    divInfoConjunto.innerHTML += 'Tamaño del conjunto: ' + conjunto.size + '<br>';
 
-    // Iterar sobre Set y mostrar cada valor
+    // He iterado sobre Set y he mostrado cada valor
     conjunto.forEach(valor => {
         divInfoConjunto.innerHTML += 'Valor: ' + valor + '<br>';
     });
 }
 
+// Función para demostrar el uso de Arrays
 function array() {
     let frutas = ['manzana', 'banana', 'naranja'];
     let divInfoArray = document.getElementById('infoArray');
     divInfoArray.innerHTML = '';
 
-    // Acceder a un elemento del array y mostrarlo
-    divInfoArray.innerHTML += 'Elemento en índice 1: ' + frutas[1] + '<br>'; // Mostrar banana
+    // He accedido a un elemento del array y lo he mostrado
+    divInfoArray.innerHTML += 'Elemento en índice 1: ' + frutas[1] + '<br>';
 
-    // Añadir un elemento al final del array
+    // He añadido un elemento al final del array
     frutas.push('mango');
 
-    // Iterar sobre un array y mostrar cada elemento
+    // He iterado sobre un array y he mostrado cada elemento
     frutas.forEach(fruta => {
         divInfoArray.innerHTML += 'Fruta: ' + fruta + '<br>';
     });
 }
 
+// Función para convertir un objeto a JSON
 function convertirJSON() {
     let objeto = {
         nombre: 'Juan',
@@ -75,16 +80,18 @@ function convertirJSON() {
         hobbies: ['fútbol', 'leer']
     };
 
-    // Convertir el objeto a una cadena JSON
-    let jsonStr = JSON.stringify(objeto, null, 2); // El segundo argumento añade formato
+    // He convertido el objeto a una cadena JSON
+    let jsonStr = JSON.stringify(objeto, null, 2);
 
-    // Actualizar el elemento del DOM
+    // He actualizado el elemento del DOM
     document.getElementById('jsonString').textContent = jsonStr;
 }
 
+// Función para demostrar el uso de Date
 function demoDate() {
     let hoy = new Date();
     let idFecha = document.getElementById('demoDate');
+    // He mostrado la fecha actual
     idFecha.innerHTML = "Hoy es: " + hoy.toDateString();
 }
 

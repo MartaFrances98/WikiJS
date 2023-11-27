@@ -66,7 +66,7 @@ class Empleado {
         return "Hola, mi nombre es " + this.nombre + " y trabajo en " + this.departamento;
     }
 }
-
+// He extendido la clase Empleado a Gerente, añadiendo un equipo y una presentación extendida
 class Gerente extends Empleado {
     constructor(nombre, departamento, equipo) {
         super(nombre, departamento);
@@ -78,6 +78,7 @@ class Gerente extends Empleado {
     }
 }
 
+// He mostrado la información de un gerente en el DOM
 function mostrarInformacionEmpleado() {
     let gerente = new Gerente("Ana", "Desarrollo", "Frontend");
     let infoEmpleado = document.getElementById('mostrarInformacionEmpleado');

@@ -1,12 +1,11 @@
-window.onload = function () {
-  
-}
-
+// He cambiado el texto de un elemento en el DOM
 function cambiarTexto() {
     document.getElementById("demo").innerHTML = "Texto cambiado";
 }
 
+// He agregado estilos a una tabla en el DOM
 function agregarEstilosTabla() {
+    // He definido una cadena de texto con los estilos CSS
     let estilos = `
         #miTabla {
             width: 100%;
@@ -33,127 +32,150 @@ function agregarEstilosTabla() {
             background-color: #ddd;
         }
     `;
-
+// He creado un elemento de estilo y lo he añadido al head del documento
     let estilo = document.createElement('style');
     estilo.type = 'text/css';
     estilo.appendChild(document.createTextNode(estilos));
     document.head.appendChild(estilo);
 
 }
-document.addEventListener('DOMContentLoaded', agregarEstilosTabla);
 
+// Al cargar el contenido del DOM, he configurado diversos elementos y manipulaciones
+document.addEventListener('DOMContentLoaded', agregarEstilosTabla);
 document.addEventListener('DOMContentLoaded', (event) => {
-    // Crear el elemento original
+    //He creado el elemento original
     let divOriginal = document.createElement('div');
     divOriginal.id = 'miDiv';
     divOriginal.style.visibility = 'hidden'; 
     divOriginal.textContent = 'Hola Mundo';
 
-    // Buscar el div contenedor y agregarle el div original como hijo
+    //He buscado el div contenedor y agregarle el div original como hijo
     let contenedor = document.getElementById('contenedor');
     contenedor.appendChild(divOriginal);
 
-    // Obtener el div original desde el DOM
+    //He obtenido el div original desde el DOM
     let divOriginalEnDOM = document.getElementById('miDiv');
 
-    // Crear el elemento para mostrar el resultado
+    //He creado el elemento para mostrar el resultado
     let divResultado = document.createElement('div');
     divResultado.id = 'resultadoz';
 
-    // Agregar el div de resultado al mismo contenedor
+    //He agregado el div de resultado al mismo contenedor
     contenedor.appendChild(divResultado);
 
-    // Obtener el div resultado desde el DOM
+    //He obtenido el div resultado desde el DOM
     let divResultadoEnDOM = document.getElementById('resultadoz');
 
-    // Copiar el contenido del div original al div de resultado
+    //Copiar el contenido del div original al div de resultado
     divResultadoEnDOM.textContent = divOriginalEnDOM.textContent;
 });
 
-//GetElementsByClassName
+// He añadido un manejador de eventos para cuando el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', function () {
+    // He obtenido todos los elementos con la clase 'miClase'
     let elementos = document.getElementsByClassName('miClase');
+    // He seleccionado el elemento del DOM donde mostraré los resultados
     let resultado = document.getElementById('resultadoElementos');
-    let contenido = ''; // Usamos una variable para almacenar el contenido
+    // He inicializado una variable para almacenar el contenido que mostraré
+    let contenido = ''; 
 
-    // Iteramos sobre los elementos con la clase 'miClase'
+    // He iterado sobre cada elemento obtenido anteriormente
     Array.from(elementos).forEach(function (elemento) {
-        contenido += elemento.textContent; // Añadimos el texto al contenido
-        contenido += '<br>'; // Añadimos un salto de línea
+        // He añadido el texto de cada elemento al contenido
+        contenido += elemento.textContent; 
+        // He añadido un salto de línea después de cada elemento
+        contenido += '<br>'; 
     });
 
-    // Removemos el último '<br>' añadido
+    // He eliminado el último salto de línea añadido
     contenido = contenido.substring(0, contenido.lastIndexOf('<br>'));
 
-    // Establecemos el contenido en el div de resultados
+    // He establecido el contenido acumulado en el elemento del DOM para mostrarlo
     resultado.innerHTML = contenido;
 });
 
-//By tag Name
+// He añadido un manejador de eventos para cuando el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', function () {
+    // He obtenido todos los párrafos del documento
     let parrafos = document.getElementsByTagName('p');
+    // He seleccionado el elemento del DOM donde mostraré los resultados
     let resultado = document.getElementById('resultadoParrafos');
-    let contenido = ''; // Usamos una variable para almacenar el contenido
+    // He inicializado una variable para almacenar el contenido que mostraré
+    let contenido = ''; 
 
-    // Iteramos sobre los elementos con la clase 'miClase'
+    // He iterado sobre cada párrafo obtenido
     Array.from(parrafos).forEach(function (parrafo) {
-        contenido += parrafo.textContent; // Añadimos el texto al contenido
-        contenido += '<br>'; // Añadimos un salto de línea
+        // He añadido el texto de cada párrafo al contenido
+        contenido += parrafo.textContent; 
+        // He añadido un salto de línea después de cada párrafo
+        contenido += '<br>'; 
     });
 
-    // Removemos el último '<br>' añadido
+    // He eliminado el último salto de línea añadido
     contenido = contenido.substring(0, contenido.lastIndexOf('<br>'));
 
-    // Establecemos el contenido en el div de resultados
+    // He establecido el contenido acumulado en el elemento del DOM para mostrarlo
     resultado.innerHTML = contenido;
 });
 
-//qUERY SELECTOR
+// He añadido un manejador de eventos para cuando el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', function () {
-    let divs = document.querySelectorAll('.miDiv'); // Obtenemos todos los elementos con la clase 'miDiv'
+    // He seleccionado todos los divs con la clase 'miDiv'
+    let divs = document.querySelectorAll('.miDiv'); 
+    // He seleccionado el elemento del DOM donde mostraré los resultados
     let resultado = document.getElementById('resultado3');
-    let contenido = ''; // Usamos una variable para almacenar el contenido
+    // He inicializado una variable para almacenar el contenido que mostraré
+    let contenido = ''; 
 
-    // Iteramos sobre los elementos con la clase 'miDiv'
+    // He iterado sobre cada div obtenido
     divs.forEach(function (div) {
-        contenido += div.textContent; // Añadimos el texto al contenido
-        contenido += '<br>'; // Añadimos un salto de línea
+        // He añadido el texto de cada div al contenido
+        contenido += div.textContent; 
+        // He añadido un salto de línea después de cada div
+        contenido += '<br>'; 
     });
 
-    // Removemos el último '<br>' añadido
+    // He eliminado el último salto de línea añadido
     contenido = contenido.substring(0, contenido.lastIndexOf('<br>'));
 
-    // Establecemos el contenido en el div de resultados
+    // He establecido el contenido acumulado en el elemento del DOM para mostrarlo
     resultado.innerHTML = contenido;
 });
 
-
+// He añadido un manejador de eventos para cuando el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', function () {
-    let items = document.querySelectorAll('.item'); // Corrección aquí: '.item' para seleccionar clases
+    // He seleccionado todos los elementos con la clase 'item'
+    let items = document.querySelectorAll('.item'); 
+    // He seleccionado el elemento del DOM donde mostraré los resultados
     let resultado = document.getElementById('resultadoItems');
 
-    // Asegúrate de que el elemento resultado existe
+    // He comprobado si el elemento para mostrar los resultados existe
     if (!resultado) {
+        // He mostrado un mensaje de error en la consola si el elemento no existe
         console.error('El elemento con ID "resultadoItems" no existe en el DOM.');
         return;
     }
 
-    let contenido = ''; // Usamos una variable para almacenar el contenido
+    // He inicializado una variable para almacenar el contenido que mostraré
+    let contenido = ''; 
 
-    // Iteramos sobre los elementos 
+    // He iterado sobre cada item obtenido
     items.forEach(function (item) {
-        contenido += item.textContent; // Añadimos el texto al contenido
-        contenido += '<br>'; // Añadimos un salto de línea
+        // He añadido el texto de cada item al contenido
+        contenido += item.textContent; 
+        // He añadido un salto de línea después de cada item
+        contenido += '<br>'; 
     });
 
-    // Removemos el último '<br>' añadido
+    // He eliminado el último salto de línea añadido
     if (contenido.endsWith('<br>')) {
         contenido = contenido.substring(0, contenido.lastIndexOf('<br>'));
     }
 
-    // Establecemos el contenido en el div de resultados
+    // He establecido el contenido acumulado en el elemento del DOM para mostrarlo
     resultado.innerHTML = contenido;
 });
+
 
 function copiarCodigo(elementoCode) {
     // Crear un rango y un objeto de selección para seleccionar el texto
