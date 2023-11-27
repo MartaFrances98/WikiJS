@@ -119,7 +119,7 @@
     <h1 class="text-center">EVENTOS</h1>
     <!-- PRIMERO -->
     <section class="container gy-5 overflow-hidden mt-4">
-        <h3 class="text-center mb-4">Evento click con una Imagen</h3>
+        <h3 class="text-center mb-4">Evento click con una imágen</h3>
         <div class="row justify-content-md-center">
             <div class="col-6 bg-dark-subtle rounded me-auto">
                 <div class="p-3 text-rigth">
@@ -129,7 +129,7 @@ function click() {
     // Evento para mostrar información al hacer clic en la imagen
     document.getElementById('imagenClickable').addEventListener('click', function (event) {
         let infoGato = document.getElementById('infoGato');
-        infoGato.textContent = 'Nombre del gato: Periquito. Descripción: Estoy hasta las narices de este trabajo por eso tengo un gato enfadado.';
+        infoGato.textContent = 'Nombre del gato: Periquito. Descripción: Soy un gato enfadado.';
 
         // Detiene la propagación del evento para evitar que se active el evento del documento
         event.stopPropagation();
@@ -155,7 +155,7 @@ function click() {
                     id="imagenClickable" 
                     src="./img/gatoenfadado.jpg" 
                     alt="Imagen de un gato" 
-                    style="cursor: pointer; width: 50%;" />
+                    style="cursor: pointer; width: 75%;" />
                     <div id="infoGato"></div>
                 </div>
             </div>
@@ -165,7 +165,7 @@ function click() {
 
     <!-- SEGUNDO -->
     <section class="container gy-5 overflow-hidden mt-4">
-        <h3 class="text-center mb-4">Evento mouseover y mouseout con una Tabla</h3>
+        <h3 class="text-center mb-4">Evento mouseover y mouseout con una tabla</h3>
         <div class="row justify-content-md-center">
 
             <div class="col-5 text-bg-dark rounded d-flex justify-content-center align-items-center me-auto">
@@ -185,7 +185,6 @@ function mouseovermouseout() {
         this.style.backgroundColor = 'yellow';
     });
 
-    // 3. Evento mouseout con una Tabla
     document.getElementById('miTabla').addEventListener('mouseout', function () {
         this.style.backgroundColor = '';
     });
@@ -202,7 +201,7 @@ function mouseovermouseout() {
 
     <!-- TERCERO -->
     <section class="container gy-5 overflow-hidden mt-4">
-        <h3 class="text-center mb-4">Evento load con una Imagen</h3>
+        <h3 class="text-center mb-4">Evento load con una imagen</h3>
         <div class="row justify-content-md-center">
             <div class="col-6 bg-dark-subtle rounded me-auto">
                 <div class="p-3 text-rigth">
@@ -227,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
             <div class="col-5 text-bg-dark rounded d-flex justify-content-center align-items-center ">
                 <div class="p-3">
-                    <img id="imagenCargada" src="./img/gatoenfadado.jpg" alt="Imagen"  style="width: 50%;" /><br>                
+                    <img id="imagenCargada" src="./img/gatoenfadado.jpg" alt="Imagen"  style="width: 75%;" /><br>                
                     <div id="mensajeCarga"></div>
                 </div>
             </div>
@@ -237,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     <!-- CUARTO -->
     <section class="container gy-5 overflow-hidden mt-4">
-        <h3 class="text-center mb-4">Evento focus y blur en un Campo de Formulario</h3>
+        <h3 class="text-center mb-4">Evento focus y blur en un campo de formulario</h3>
         <div class="row justify-content-md-center">
 
             <div class="col-5 text-bg-dark rounded d-flex justify-content-center align-items-center me-auto">
@@ -270,7 +269,7 @@ function focusblur() {
 
     <!-- QUINTO -->
       <section class="container gy-5 overflow-hidden mt-4">
-        <h3 class="text-center mb-4">Evento Display con Click</h3>
+        <h3 class="text-center mb-4">Evento display con click</h3>
         <div class="row justify-content-md-center">
             <div class="col-6 bg-dark-subtle rounded me-auto">
                 <div class="p-3 text-rigth">
@@ -298,11 +297,11 @@ document.addEventListener('DOMContentLoaded', function () {
             <div class="col-5 text-bg-dark rounded d-flex justify-content-center align-items-center ">
                 <div class="p-3">
                     <div>
-                        <img class="imagenes" src="./img/gatoenfadado.jpg" alt="Imagen 1" style="display: none; width: 25%;">
-                        <img class="imagenes" src="./img/gatoenfadado.jpg" alt="Imagen 2" style="display: block; width: 25%;">
-                        <img class="imagenes" src="./img/gatoenfadado.jpg" alt="Imagen 3" style="display: none; width: 25%;"><br>
+                        <img class="imagenes" src="./img/gatoenfadado.jpg" alt="Imagen 1" style="display: none; width: 50%;">
+                        <img class="imagenes" src="./img/gatoenfadado.jpg" alt="Imagen 2" style="display: block; width: 50%;">
+                        <img class="imagenes" src="./img/gatoenfadado.jpg" alt="Imagen 3" style="display: none; width: 50%;"><br>
                     </div>
-                    <button id="mostrarOcultar">Mostrar/Ocultar Imágenes</button>
+                    <button id="mostrarOcultar">Mostrar/Ocultar imágenes</button>
                 </div>
             </div>
         </div>

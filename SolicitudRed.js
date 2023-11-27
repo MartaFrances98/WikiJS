@@ -38,7 +38,13 @@ function mostrarGatosDeRaza(razaSeleccionada) {
             // He filtrado los gatos por la raza seleccionada
             const gatosFiltrados = datosGatos.filter(gato => gato.raza === razaSeleccionada);
             const tabla = document.getElementById('tablaGatos');
-            tabla.innerHTML = ''; // He limpiado la tabla anterior
+            //He limpiado la tabla anterior 
+            tabla.innerHTML = ''; 
+
+            // He aplicado estilos a la tabla
+            tabla.style.border = '1px solid white';
+            tabla.style.borderCollapse = 'collapse';
+            tabla.style.textAlign = 'center';
 
             // He comprobado si hay gatos filtrados y he actualizado la tabla
             if (gatosFiltrados.length) {
@@ -46,7 +52,10 @@ function mostrarGatosDeRaza(razaSeleccionada) {
                 // He insertado las cabeceras de la tabla
                 ['Nombre', 'Raza', 'Edad', 'Color'].forEach(texto => {
                     const celda = encabezado.insertCell();
+                    //He añadido el contenido del texto
                     celda.textContent = texto;
+                     // He añadido borde a cada celda
+                    celda.style.border = '1px solid white';
                 });
 
                 // He iterado sobre los gatos filtrados y he añadido filas a la tabla
@@ -55,6 +64,7 @@ function mostrarGatosDeRaza(razaSeleccionada) {
                     Object.values(gato).forEach(texto => {
                         const celda = fila.insertCell();
                         celda.textContent = texto;
+                        celda.style.border = '1px solid white'; // Aplicar borde a cada celda
                     });
                 });
             }
@@ -96,26 +106,26 @@ fetch('https://api.covidtracking.com/v2/us/daily/2021-01-02/simple.json', {
         document.getElementById('resultadoFetch').textContent = 'Error al obtener datos: ' + error;
     });
 
-    function copiarCodigo(elementoCode) {
-        // Crear un rango y un objeto de selección para seleccionar el texto
-        const rango = document.createRange();
-        const selección = window.getSelection();
-        rango.selectNodeContents(elementoCode);
-        // Limpia selecciones existentes
-        selección.removeAllRanges(); 
-        // Añade el rango que contiene el texto del elemento code
-        selección.addRange(rango); 
-    
-        try {
-            // Ejecutar el comando de copiado
-            const exitoso = document.execCommand('copy');
-            const mensaje = exitoso ? 'exitoso' : 'fallido';
-            console.log(`Copiado ${mensaje}`);
-        } catch (err) {
-            console.error('Error al copiar', err);
-        }
-    
-        // Limpiar la selección
-        selección.removeAllRanges();
-    }
-    
+//Para copiar el pre
+function copiarCodigo(elementoCode) {
+    // He creado un rango y un objeto de selección para seleccionar el texto
+   const rango = document.createRange();
+   const selección = window.getSelection();
+   rango.selectNodeContents(elementoCode);
+   // He limpiado selecciones existentes
+   selección.removeAllRanges(); 
+   // He añadido el rango que contiene el texto del elemento code
+   selección.addRange(rango); 
+
+   try {
+       // He ejecutado el comando de copiado
+       const exitoso = document.execCommand('copy');
+       const mensaje = exitoso ? 'exitoso' : 'fallido';
+       console.log(`Copiado ${mensaje}`);
+   } catch (err) {
+       console.error('Error al copiar', err);
+   }
+
+    // He limpiado la selección
+   selección.removeAllRanges();
+}

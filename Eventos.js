@@ -13,7 +13,7 @@ function click() {
     // He añadido un evento para mostrar información al hacer clic en la imagen
     document.getElementById('imagenClickable').addEventListener('click', function (event) {
         let infoGato = document.getElementById('infoGato');
-        infoGato.textContent = 'Nombre del gato: Periquito. Descripción: Estoy hasta las narices de este trabajo por eso tengo un gato enfadado.';
+        infoGato.textContent = 'Nombre del gato: Periquito. Descripción: Soy un gato enfadado.';
          // He detenido la propagación del evento para evitar que se active el evento del documento
         event.stopPropagation();
     });
@@ -133,7 +133,7 @@ function generarTabla(numFilas, numColumnas) {
         let fila = tabla.insertRow();
         for (let j = 0; j < numColumnas; j++) {
             let celda = fila.insertCell();
-            celda.textContent = 'Fila ${i + 1}, Columna ${j + 1}';
+            celda.textContent = `Fila ${i + 1}, Columna ${j + 1}`;
             celda.style.border = '1px solid black';
         }
 
@@ -197,23 +197,26 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-function copiarCodigo(elementoCode) {
-    // Crear un rango y un objeto de selección para seleccionar el texto
-    const rango = document.createRange();
-    const selección = window.getSelection();
-    rango.selectNodeContents(elementoCode);
-    selección.removeAllRanges(); // Limpia selecciones existentes
-    selección.addRange(rango); // Añade el rango que contiene el texto del elemento code
-
-    try {
-        // Ejecutar el comando de copiado
-        const exitoso = document.execCommand('copy');
-        const mensaje = exitoso ? 'exitoso' : 'fallido';
-        console.log(`Copiado ${mensaje}`);
-    } catch (err) {
-        console.error('Error al copiar', err);
+//Para copiar el pre
+    function copiarCodigo(elementoCode) {
+         // He creado un rango y un objeto de selección para seleccionar el texto
+        const rango = document.createRange();
+        const selección = window.getSelection();
+        rango.selectNodeContents(elementoCode);
+        // He limpiado selecciones existentes
+        selección.removeAllRanges(); 
+        // He añadido el rango que contiene el texto del elemento code
+        selección.addRange(rango); 
+    
+        try {
+            // He ejecutado el comando de copiado
+            const exitoso = document.execCommand('copy');
+            const mensaje = exitoso ? 'exitoso' : 'fallido';
+            console.log(`Copiado ${mensaje}`);
+        } catch (err) {
+            console.error('Error al copiar', err);
+        }
+    
+         // He limpiado la selección
+        selección.removeAllRanges();
     }
-
-    // Limpiar la selección
-    selección.removeAllRanges();
-}

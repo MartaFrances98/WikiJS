@@ -86,25 +86,26 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+//Para copiar el pre
 function copiarCodigo(elementoCode) {
-    // Crear un rango y un objeto de selección para seleccionar el texto
-    const rango = document.createRange();
-    const selección = window.getSelection();
-    rango.selectNodeContents(elementoCode);
-    // Limpia selecciones existentes
-    selección.removeAllRanges(); 
-// Añade el rango que contiene el texto del elemento code
-    selección.addRange(rango); 
+    // He creado un rango y un objeto de selección para seleccionar el texto
+   const rango = document.createRange();
+   const selección = window.getSelection();
+   rango.selectNodeContents(elementoCode);
+   // He limpiado selecciones existentes
+   selección.removeAllRanges(); 
+   // He añadido el rango que contiene el texto del elemento code
+   selección.addRange(rango); 
 
-    try {
-        // Ejecutar el comando de copiado
-        const exitoso = document.execCommand('copy');
-        const mensaje = exitoso ? 'exitoso' : 'fallido';
-        console.log(`Copiado ${mensaje}`);
-    } catch (err) {
-        console.error('Error al copiar', err);
-    }
+   try {
+       // He ejecutado el comando de copiado
+       const exitoso = document.execCommand('copy');
+       const mensaje = exitoso ? 'exitoso' : 'fallido';
+       console.log(`Copiado ${mensaje}`);
+   } catch (err) {
+       console.error('Error al copiar', err);
+   }
 
-    // Limpiar la selección
-    selección.removeAllRanges();
+    // He limpiado la selección
+   selección.removeAllRanges();
 }
