@@ -77,4 +77,25 @@ fetch('https://api.covidtracking.com/v2/us/daily/2021-01-02/simple.json')
     .catch(error => {
         document.getElementById('resultadoFetch').textContent = 'Error al obtener datos: ' + error;
     });
+
+    function copiarCodigo(elementoCode) {
+        // Crear un rango y un objeto de selección para seleccionar el texto
+        const rango = document.createRange();
+        const selección = window.getSelection();
+        rango.selectNodeContents(elementoCode);
+        selección.removeAllRanges(); // Limpia selecciones existentes
+        selección.addRange(rango); // Añade el rango que contiene el texto del elemento code
+    
+        try {
+            // Ejecutar el comando de copiado
+            const exitoso = document.execCommand('copy');
+            const mensaje = exitoso ? 'exitoso' : 'fallido';
+            console.log(`Copiado ${mensaje}`);
+        } catch (err) {
+            console.error('Error al copiar', err);
+        }
+    
+        // Limpiar la selección
+        selección.removeAllRanges();
+    }
     

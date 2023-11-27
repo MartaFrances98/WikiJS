@@ -45,7 +45,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //3. IndexBD
     var solicitudDB = window.indexedDB.open("ejemplobasedatoswikijs", 1);
-
     solicitudDB.onerror = function(event) {
         document.getElementById('resultadoDB').textContent += "Error al abrir la base de datos: " + event.target.errorCode + "\n";
     };
@@ -75,5 +74,26 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         };
     };
+
+    function copiarCodigo(elementoCode) {
+        // Crear un rango y un objeto de selección para seleccionar el texto
+        const rango = document.createRange();
+        const selección = window.getSelection();
+        rango.selectNodeContents(elementoCode);
+        selección.removeAllRanges(); // Limpia selecciones existentes
+        selección.addRange(rango); // Añade el rango que contiene el texto del elemento code
+    
+        try {
+            // Ejecutar el comando de copiado
+            const exitoso = document.execCommand('copy');
+            const mensaje = exitoso ? 'exitoso' : 'fallido';
+            console.log(`Copiado ${mensaje}`);
+        } catch (err) {
+            console.error('Error al copiar', err);
+        }
+    
+        // Limpiar la selección
+        selección.removeAllRanges();
+    }
 
 
