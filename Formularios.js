@@ -66,16 +66,23 @@ function validarPassHandler(event) {
     });
 });
 
-// function togglePasswordVisibility() {
-//     var passwordField = document.getElementById("password");
-//     var passwordToggle = document.getElementById("password-toggle");
+function copiarCodigo(elementoCode) {
+    // Crear un rango y un objeto de selección para seleccionar el texto
+    const rango = document.createRange();
+    const selección = window.getSelection();
+    rango.selectNodeContents(elementoCode);
+    selección.removeAllRanges(); // Limpia selecciones existentes
+    selección.addRange(rango); // Añade el rango que contiene el texto del elemento code
 
-//     if (passwordField.type === "password") {
-//         passwordField.type = "text";
-//         passwordToggle.textContent = 'visibility';
-//     } else {
-//         passwordField.type = "password";
-//         passwordToggle.textContent = 'visibility_off';
-//     }
-// }
+    try {
+        // Ejecutar el comando de copiado
+        const exitoso = document.execCommand('copy');
+        const mensaje = exitoso ? 'exitoso' : 'fallido';
+        console.log(`Copiado ${mensaje}`);
+    } catch (err) {
+        console.error('Error al copiar', err);
+    }
 
+    // Limpiar la selección
+    selección.removeAllRanges();
+}

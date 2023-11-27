@@ -28,27 +28,27 @@ function map() {
     });
 }
 
-function set(){
-let conjunto = new Set();
+function set() {
+    let conjunto = new Set();
 
-// Añadir valores
-conjunto.add('manzana');
-conjunto.add('banana');
-conjunto.add('manzana'); // No se añadirá porque ya existe
+    // Añadir valores
+    conjunto.add('manzana');
+    conjunto.add('banana');
+    conjunto.add('manzana'); // No se añadirá porque ya existe
 
-let divInfoConjunto = document.getElementById('infoConjunto');
-divInfoConjunto.innerHTML = '';
+    let divInfoConjunto = document.getElementById('infoConjunto');
+    divInfoConjunto.innerHTML = '';
 
-// Comprobar si un valor existe y mostrarlo
-divInfoConjunto.innerHTML += 'Existe banana: ' + conjunto.has('banana') + '<br>'; // Mostrar true
+    // Comprobar si un valor existe y mostrarlo
+    divInfoConjunto.innerHTML += 'Existe banana: ' + conjunto.has('banana') + '<br>'; // Mostrar true
 
-// Tamaño del Set y mostrarlo
-divInfoConjunto.innerHTML += 'Tamaño del conjunto: ' + conjunto.size + '<br>'; // Mostrar 2
+    // Tamaño del Set y mostrarlo
+    divInfoConjunto.innerHTML += 'Tamaño del conjunto: ' + conjunto.size + '<br>'; // Mostrar 2
 
-// Iterar sobre Set y mostrar cada valor
-conjunto.forEach(valor => {
-    divInfoConjunto.innerHTML += 'Valor: ' + valor + '<br>';
-});
+    // Iterar sobre Set y mostrar cada valor
+    conjunto.forEach(valor => {
+        divInfoConjunto.innerHTML += 'Valor: ' + valor + '<br>';
+    });
 }
 
 function array() {
@@ -86,4 +86,25 @@ function demoDate() {
     let hoy = new Date();
     let idFecha = document.getElementById('demoDate');
     idFecha.innerHTML = "Hoy es: " + hoy.toDateString();
+}
+
+function copiarCodigo(elementoCode) {
+    // Crear un rango y un objeto de selección para seleccionar el texto
+    const rango = document.createRange();
+    const selección = window.getSelection();
+    rango.selectNodeContents(elementoCode);
+    selección.removeAllRanges(); // Limpia selecciones existentes
+    selección.addRange(rango); // Añade el rango que contiene el texto del elemento code
+
+    try {
+        // Ejecutar el comando de copiado
+        const exitoso = document.execCommand('copy');
+        const mensaje = exitoso ? 'exitoso' : 'fallido';
+        console.log(`Copiado ${mensaje}`);
+    } catch (err) {
+        console.error('Error al copiar', err);
+    }
+
+    // Limpiar la selección
+    selección.removeAllRanges();
 }

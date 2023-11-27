@@ -125,12 +125,26 @@
                 <div class="p-3 text-rigth">
                     <pre>
                         <code class="languaje-js" id="textoParaCopiar">
-                            document.getElementById('imagenClickable').addEventListener('click', function() {
-                                let infoGato = document.getElementById('infoGato');
-                                infoGato.textContent = 'Nombre del gato: Periquito. Descripción: Estoy hasta las narices de este trabajo por eso tengo un gato enfadado.';
-                            });
+function click() {
+    // Evento para mostrar información al hacer clic en la imagen
+    document.getElementById('imagenClickable').addEventListener('click', function (event) {
+        let infoGato = document.getElementById('infoGato');
+        infoGato.textContent = 'Nombre del gato: Periquito. Descripción: Estoy hasta las narices de este trabajo por eso tengo un gato enfadado.';
+
+        // Detiene la propagación del evento para evitar que se active el evento del documento
+        event.stopPropagation();
+    });
+
+    // Evento para todo el documento
+    document.addEventListener('click', function () {
+        let infoGato = document.getElementById('infoGato');
+        infoGato.textContent = ''; // Borra el texto si se hace clic fuera de la imagen
+    });
+}
                         </code>
                 </pre>
+                <button onclick="copiarCodigo(this.previousElementSibling)">Copiar Código</button>
+
                 </div>
             </div>
             <div class="col-5 text-bg-dark rounded d-flex justify-content-center align-items-center ">
@@ -142,9 +156,7 @@
                     src="./img/gatoenfadado.jpg" 
                     alt="Imagen de un gato" 
                     style="cursor: pointer; width: 50%;" />
-            
-                <!-- Div para mostrar la información del gato -->
-                <div id="infoGato"></div>
+                    <div id="infoGato"></div>
                 </div>
             </div>
 
@@ -168,16 +180,20 @@
                 <div class="p-3 text-rigth">
                     <pre>
                         <code class="languaje-js">
-                            function mouseovermouseout(){
-                                document.getElementById('miTabla').addEventListener('mouseover', function() {
-                                    this.style.backgroundColor = 'yellow';
-                                 });
-                             document.getElementById('miTabla').addEventListener('mouseout', function() {
-                                this.style.backgroundColor = '';
-                             });
-                            }
+function mouseovermouseout() {
+    document.getElementById('miTabla').addEventListener('mouseover', function () {
+        this.style.backgroundColor = 'yellow';
+    });
+
+    // 3. Evento mouseout con una Tabla
+    document.getElementById('miTabla').addEventListener('mouseout', function () {
+        this.style.backgroundColor = '';
+    });
+}
                         </code>
                 </pre>
+                <button onclick="copiarCodigo(this.previousElementSibling)">Copiar Código</button>
+
                 </div>
             </div>
 
@@ -192,14 +208,21 @@
                 <div class="p-3 text-rigth">
                     <pre>
                         <code class="languaje-js">
-                            function load() {
-                                document.getElementById('imagenCargada').addEventListener('load', function() {
-                                    let mensajeCarga = document.getElementById('mensajeCarga');
-                                    mensajeCarga.textContent = 'La imagen ha sido cargada';
-                                });
-                            }
+document.addEventListener('DOMContentLoaded', function () {
+    var imagen = document.getElementById('imagenCargada');
+
+    imagen.addEventListener('load', function () {
+        var mensajeCarga = document.getElementById('mensajeCarga');
+        mensajeCarga.innerHTML = 'La imagen ha sido cargada';
+    });
+
+    // Este paso es para forzar la recarga de la imagen si ya está en caché
+    imagen.src = imagen.src;
+});
                         </code>
                 </pre>
+                <button onclick="copiarCodigo(this.previousElementSibling)">Copiar Código</button>
+
                 </div>
             </div>
             <div class="col-5 text-bg-dark rounded d-flex justify-content-center align-items-center ">
@@ -226,15 +249,19 @@
                 <div class="p-3 text-rigth">
                     <pre>
                         <code class="languaje-js">
-                            document.getElementById('miInput').addEventListener('focus', function() {
-                                this.style.backgroundColor = 'lightgreen';
-                            });
-                           
-                            document.getElementById('miInput').addEventListener('blur', function() {
-                                this.style.backgroundColor = '';
-                            });                      
+function focusblur() {
+    document.getElementById('miInput').addEventListener('focus', function () {
+        this.style.backgroundColor = 'lightgreen';
+    });
+
+    document.getElementById('miInput').addEventListener('blur', function () {
+        this.style.backgroundColor = '';
+    });
+}                   
                         </code>
                 </pre>
+                <button onclick="copiarCodigo(this.previousElementSibling)">Copiar Código</button>
+
                 </div>
             </div>
 
@@ -243,26 +270,29 @@
 
     <!-- QUINTO -->
       <section class="container gy-5 overflow-hidden mt-4">
-        <h3 class="text-center mb-4">Evento coordenadas</h3>
+        <h3 class="text-center mb-4">Evento Display con Click</h3>
         <div class="row justify-content-md-center">
             <div class="col-6 bg-dark-subtle rounded me-auto">
                 <div class="p-3 text-rigth">
                     <pre>
                         <code class="languaje-js">
-                            document.getElementById('mostrarOcultar').addEventListener('click', function() {
-                                var imagenes = document.getElementsByClassName('imagenes');
-                            
-                                // Bucle para recorrer todas las imágenes y cambiar su visibilidad
-                                for (var i = 0; i < imagenes.length; i++) {
-                                    if (imagenes[i].style.display === 'none') {
-                                        imagenes[i].style.display = 'block';
-                                    } else {
-                                        imagenes[i].style.display = 'none';
-                                    }
-                                }
-                            });
+document.addEventListener('DOMContentLoaded', function () {
+    var boton = document.getElementById('mostrarOcultar');
+    var imagenes = document.getElementsByClassName('imagenes');
+
+    boton.addEventListener('click', function () {
+        for (var i = 0; i < imagenes.length; i++) {
+            if (imagenes[i].style.display === 'none') {
+                imagenes[i].style.display = 'block';
+            } else {
+                imagenes[i].style.display = 'none';
+            }
+        }
+    });
+});
                     </code>
                 </pre>
+                <button onclick="copiarCodigo(this.previousElementSibling)">Copiar Código</button>
                 </div>
             </div>
             <div class="col-5 text-bg-dark rounded d-flex justify-content-center align-items-center ">
@@ -275,7 +305,6 @@
                     <button id="mostrarOcultar">Mostrar/Ocultar Imágenes</button>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -298,55 +327,56 @@
                 <div class="p-3 text-rigth">
                     <pre>
                         <code class="languaje-js">
-                            function togglePasswordVisibility() {
-                                var passwordField = document.getElementById("password");
-                                var passwordToggle = document.getElementById("password-toggle");
-                            
-                                if (passwordField.type === "password") {
-                                    passwordField.type = "text";
-                                    passwordToggle.textContent = 'visibility';
-                                } else {
-                                    passwordField.type = "password";
-                                    passwordToggle.textContent = 'visibility_off';
-                                }
-                            }
-                                
+function togglePasswordVisibility() {
+    var passwordField = document.getElementById("password");
+    var passwordToggle = document.getElementById("password-toggle");
+
+    if (passwordField.type === "password") {
+        passwordField.type = "text";
+        passwordToggle.textContent = 'visibility';
+    } else {
+        passwordField.type = "password";
+        passwordToggle.textContent = 'visibility_off';
+    }
+}
                         </code>
                     </pre>
+                    <button onclick="copiarCodigo(this.previousElementSibling)">Copiar Código</button>
                 </div>
             </div>
-
         </div>
     </section>
 
     <!-- SEPTIMO -->
     <section class="container gy-5 overflow-hidden mt-4">
-        <h3 class="text-center mb-4">Evento coordenadas</h3>
+        <h3 class="text-center mb-4">Evento coordenadas con mousemove y mouseout</h3>
         <div class="row justify-content-md-center">
             <div class="col-6 bg-dark-subtle rounded me-auto">
                 <div class="p-3 text-rigth">
                     <pre>
                         <code class="languaje-js">
-                            function cordenadas(){
-                                let imagen = document.querySelector("#img_gato");
-                                let coordenadas = document.createElement("span");
-                                coordenadas.id = "coordenadas";
-                                let posicion = document.createTextNode("X:  Y:  ");
-                                posicion.id = "posicion";
-                                coordenadas.appendChild(posicion);
-                                coordenadas.appendChild(document.createElement("br"));
-                                coordenadas.style.display = "none";
-                                imagen.before(coordenadas);
-                                imagen.addEventListener("mousemove", function (e) {
-                                  coordenadas.style.display = "inline";
-                                  posicion.nodeValue = "X: " + e.screenX + "Y: " + e.screenY;
-                                });
-                                imagen.addEventListener("mouseout", function (e) {
-                                  coordenadas.style.display = "none";
-                                });
-                                }
+function cordenadas() {
+    let imagen = document.querySelector("#img_gato");
+    let coordenadas = document.createElement("span");
+    coordenadas.id = "coordenadas";
+    let posicion = document.createTextNode("X:  Y:  ");
+    posicion.id = "posicion";
+    coordenadas.appendChild(posicion);
+    coordenadas.appendChild(document.createElement("br"));
+    coordenadas.style.display = "none";
+    imagen.before(coordenadas);
+    imagen.addEventListener("mousemove", function (e) {
+        coordenadas.style.display = "inline";
+        posicion.nodeValue = "X: " + e.screenX + "Y: " + e.screenY;
+    });
+    imagen.addEventListener("mouseout", function (e) {
+        coordenadas.style.display = "none";
+    });
+}
                     </code>
                 </pre>
+                <button onclick="copiarCodigo(this.previousElementSibling)">Copiar Código</button>
+
                 </div>
             </div>
             <div class="col-5 text-bg-dark rounded d-flex justify-content-center align-items-center ">
@@ -375,46 +405,60 @@
                 <div class="p-3 text-rigth">
                     <pre>
                         <code class="languaje-js">
-                            function crearTablas() {
-                                // Crear la primera tabla y añadir contenido
-                                let tablaConContenido = document.createElement('table');
-                                tablaConContenido.id = 'tablaConContenido';
-                                for (let i = 0; i < 3; i++) {
-                                    let fila = tablaConContenido.insertRow();
-                                    for (let j = 0; j < 3; j++) {
-                                        let celda = fila.insertCell();
-                                        celda.textContent = `Fila ${i + 1}, Columna ${j + 1}`;
-                                    }
-                                }
-                            
-                                // Crear la segunda tabla sin contenido
-                                let tablaSinContenido = document.createElement('table');
-                                tablaSinContenido.id = 'tablaSinContenido';
-                                for (let i = 0; i < 3; i++) {
-                                    tablaSinContenido.insertRow();
-                                }
-                            
-                                // Agregar las tablas al cuerpo del documento
-                                document.body.appendChild(tablaConContenido);
-                                document.body.appendChild(tablaSinContenido);
-                            }
-                            
-                            
-                            
-                            function agregarEvento() {
-                                let fila1Tabla1 = document.querySelector('#tabla1 tr');
-                                let fila1Tabla2 = document.querySelector('#tabla2 tr');
-                            
-                                fila1Tabla1.addEventListener('mouseover', function() {
-                                    fila1Tabla2.style.backgroundColor = 'yellow'; // Cambia el color de fondo
-                                    console.log(fila1Tabla1.textContent); // Imprime el contenido de la fila
-                                });
-                            }
+function generarTabla(numFilas, numColumnas) {
+    let tabla = document.createElement('table');
+    tabla.style.borderCollapse = 'collapse';
+
+    for (let i = 0; i < numFilas; i++) {
+        let fila = tabla.insertRow();
+        for (let j = 0; j < numColumnas; j++) {
+            let celda = fila.insertCell();
+            celda.textContent = `Fila ${i + 1}, Columna ${j + 1}`;
+            celda.style.border = '1px solid black';
+        }
+
+        fila.addEventListener('mouseover', function() {
+            mostrarTextoFila(this);
+        });
+    }
+
+    tabla.addEventListener('mouseleave', function() {
+        ocultarTextoFila();
+    });
+
+    let contenedorTablas = document.getElementById('contenedorTablas');
+    contenedorTablas.appendChild(tabla);
+
+    let divTexto = document.getElementById('textoFila');
+    if (!divTexto) {
+        divTexto = document.createElement('div');
+        divTexto.id = 'textoFila';
+        divTexto.textContent = ''; // Inicializar vacío
+        document.body.appendChild(divTexto);
+    }
+}
+
+function mostrarTextoFila(fila) {
+    let textoFila = '';
+    let celdas = fila.cells;
+
+    for (let celda of celdas) {
+        textoFila += celda.textContent + ' ';
+    }
+
+    let divTexto = document.getElementById('textoFila');
+    divTexto.textContent = textoFila;
+}
+
+function ocultarTextoFila() {
+    let divTexto = document.getElementById('textoFila');
+    divTexto.textContent = ''; // Borrar el contenido cuando el ratón sale de la tabla
+}
                         </code>
                     </pre>
+                    <button onclick="copiarCodigo(this.previousElementSibling)">Copiar Código</button>
                 </div>
             </div>
-
         </div>
     </section>
       

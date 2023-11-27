@@ -3,6 +3,7 @@ window.onload = function () {
     demoOperaciones();
     resultadoEdad();
     flecharessuma();
+    operadoreslogicos();
 }
 
 function tipodatos() {
@@ -19,15 +20,22 @@ function tipodatos() {
     document.getElementById('codigoJS').textContent = contenido;
 }
 
-    document.addEventListener('DOMContentLoaded', function () {
-    tipodatos();
-    });
-
-
 let saludar = function (nombre) {
     let mensaje = "Hola " + nombre;
     document.getElementById("mensajeSaludo").textContent = mensaje;
 };
+
+function operadoreslogicos() {
+let contenido = `
+let verdadero = true;
+let falso = false;
+
+let and = verdadero && falso; // AND
+let or = verdadero || falso; // OR
+let not = !verdadero; // NOT 
+`; 
+document.getElementById('operadoreslogicos').textContent = contenido; 
+} 
 
 function demoOperaciones() {
     let num1 = 10;
@@ -52,10 +60,6 @@ let modulo = 10 % 3; // Módulo (resto)
 
     document.getElementById('operadores').textContent = contenido;
 }
-
-    document.addEventListener('DOMContentLoaded', function () {
-    operadoresbasicos();
-    });
 
 
 function manejarClick() {
@@ -95,4 +99,25 @@ const sumar = (a, b) => a + b;
 let resultado = sumar(5, 3);
 
 document.getElementById('resultadoSuma').textContent = "Resultado de la suma: " + resultado;
+}
+
+function copiarCodigo(elementoCode) {
+    // Crear un rango y un objeto de selección para seleccionar el texto
+    const rango = document.createRange();
+    const selección = window.getSelection();
+    rango.selectNodeContents(elementoCode);
+    selección.removeAllRanges(); // Limpia selecciones existentes
+    selección.addRange(rango); // Añade el rango que contiene el texto del elemento code
+
+    try {
+        // Ejecutar el comando de copiado
+        const exitoso = document.execCommand('copy');
+        const mensaje = exitoso ? 'exitoso' : 'fallido';
+        console.log(`Copiado ${mensaje}`);
+    } catch (err) {
+        console.error('Error al copiar', err);
+    }
+
+    // Limpiar la selección
+    selección.removeAllRanges();
 }

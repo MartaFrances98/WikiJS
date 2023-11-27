@@ -58,16 +58,7 @@ function focusblur() {
         this.style.backgroundColor = '';
     });
 }
-// 6. Evento submit en un Formulario
-document.addEventListener('DOMContentLoaded', function () {
-    var formulario = document.getElementById('formulario');
-    formulario.addEventListener('submit', function (event) {
-        event.preventDefault();
-        let input = document.getElementById("nombre").value;
-        let mensaje = "Texto recibido: " + input;
-        document.getElementById("formularioresponse").textContent = mensaje;
-    });
-});
+
 
 // 7.evento visibilidad
 function togglePasswordVisibility() {
@@ -175,3 +166,23 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+function copiarCodigo(elementoCode) {
+    // Crear un rango y un objeto de selección para seleccionar el texto
+    const rango = document.createRange();
+    const selección = window.getSelection();
+    rango.selectNodeContents(elementoCode);
+    selección.removeAllRanges(); // Limpia selecciones existentes
+    selección.addRange(rango); // Añade el rango que contiene el texto del elemento code
+
+    try {
+        // Ejecutar el comando de copiado
+        const exitoso = document.execCommand('copy');
+        const mensaje = exitoso ? 'exitoso' : 'fallido';
+        console.log(`Copiado ${mensaje}`);
+    } catch (err) {
+        console.error('Error al copiar', err);
+    }
+
+    // Limpiar la selección
+    selección.removeAllRanges();
+}

@@ -84,7 +84,8 @@
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="p-1 rounded" href="./Fromularios.html" class="dropdown-item">FORMULARIOS
+                                    <li><a class="p-1 rounded" href="./Fromularios.html"
+                                            class="dropdown-item">FORMULARIOS
                                         </a>
                                     </li>
                                 </ul>
@@ -131,14 +132,13 @@
                 <div class="p-3 text-rigth">
                     <pre>
                         <code class="languaje-js">
-"&lt;p id="demo"&gt;Texto original"&lt;/p&gt;
-"&lt;button onclick="cambiarTexto()"&gt;Cambiar Texto"&lt;/button&gt;
 function cambiarTexto() {
     document.getElementById("demo").innerHTML = "Texto cambiado";
 }
-                            
+                          
                         </code>
                 </pre>
+                    <button onclick="copiarCodigo(this.previousElementSibling)">Copiar Código</button>
                 </div>
             </div>
 
@@ -172,39 +172,41 @@ function cambiarTexto() {
                 <div class="p-3 text-rigth">
                     <pre>
                         <code class="languaje-js">
-                            function agregarEstilosTabla() {
-                                let estilos = `
-                                    #miTabla {
-                                        width: 100%;
-                                        border-collapse: collapse;
-                                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-                                    }
-                            
-                                    #miTabla th, #miTabla td {
-                                        border: 1px solid #ddd;
-                                        padding: 8px;
-                                        text-align: left;
-                                    }
-                            
-                                    #miTabla th {
-                                        background-color: #4CAF50;
-                                        color: white;
-                                    }
-                            
-                                    #miTabla tr:nth-child(even) {
-                                        background-color: #f2f2f2;
-                                    }
-                            
-                                    #miTabla tr:hover {
-                                        background-color: #ddd;
-                                    }
-                                `;
-                            
-                                let estilo = document.createElement('style');
-                                estilo.type = 'text/css';
-                                estilo.appendChild(document.createTextNode(estilos));
-                                document.head.appendChild(estilo);
-                            }
+function agregarEstilosTabla() {
+    let estilos = `
+        #miTabla {
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        #miTabla th, #miTabla td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        #miTabla th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #miTabla tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #miTabla tr:hover {
+            background-color: #ddd;
+        }
+    `;
+
+    let estilo = document.createElement('style');
+    estilo.type = 'text/css';
+    estilo.appendChild(document.createTextNode(estilos));
+    document.head.appendChild(estilo);
+
+}
+document.addEventListener('DOMContentLoaded', agregarEstilosTabla);
                         </code>
                 </pre>
                     <button onclick="copiarCodigo(this.previousElementSibling)">Copiar Código</button>
@@ -222,29 +224,33 @@ function cambiarTexto() {
                 <div class="p-3 text-rigth">
                     <pre>
                         <code class="languaje-js">
-                                // Crear el elemento original
-                                let divOriginal = document.createElement('div');
-                                divOriginal.id = 'miDiv';
-                                divOriginal.textContent = 'Hola Mundo';
-                                
-                                // Agregar el elemento original al cuerpo del documento
-                                document.body.appendChild(divOriginal);
-                                
-                                // Ahora que el divOriginal está en el DOM, puedes usar getElementById
-                                let divOriginalEnDOM = document.getElementById('miDiv');
-                                
-                                // Crear el elemento para mostrar el resultado
-                                let divResultado = document.createElement('div');
-                                divResultado.id = 'resultado';
-                                
-                                // Agregar el elemento de resultado al cuerpo del documento
-                                document.body.appendChild(divResultado);
-                                
-                                // Ahora puedes usar getElementById para acceder al divResultado
-                                let divResultadoEnDOM = document.getElementById('resultado');
-                                
-                                // Copiar el contenido de divOriginal a divResultado
-                                divResultadoEnDOM.textContent = divOriginalEnDOM.textContent;
+document.addEventListener('DOMContentLoaded', (event) => {
+    // Crear el elemento original
+    let divOriginal = document.createElement('div');
+    divOriginal.id = 'miDiv';
+    divOriginal.style.visibility = 'hidden'; 
+    divOriginal.textContent = 'Hola Mundo';
+
+    // Buscar el div contenedor y agregarle el div original como hijo
+    let contenedor = document.getElementById('contenedor');
+    contenedor.appendChild(divOriginal);
+
+    // Obtener el div original desde el DOM
+    let divOriginalEnDOM = document.getElementById('miDiv');
+
+    // Crear el elemento para mostrar el resultado
+    let divResultado = document.createElement('div');
+    divResultado.id = 'resultadoz';
+
+    // Agregar el div de resultado al mismo contenedor
+    contenedor.appendChild(divResultado);
+
+    // Obtener el div resultado desde el DOM
+    let divResultadoEnDOM = document.getElementById('resultadoz');
+
+    // Copiar el contenido del div original al div de resultado
+    divResultadoEnDOM.textContent = divOriginalEnDOM.textContent;
+});
                         </code>
                 </pre>
                     <button onclick="copiarCodigo(this.previousElementSibling)">Copiar Código</button>
@@ -279,12 +285,23 @@ function cambiarTexto() {
                 <div class="p-3 text-rigth">
                     <pre>
                         <code class="languaje-js">
-                            let elementos = document.getElementsByClassName('miClase');
-                            let resultado = document.getElementById('resultado');
-                            
-                            for (let elemento of elementos) {
-                                resultado.innerHTML += elemento.textContent + '<br>';
-                            }                      
+document.addEventListener('DOMContentLoaded', function () {
+    let elementos = document.getElementsByClassName('miClase');
+    let resultado = document.getElementById('resultadoElementos');
+    let contenido = ''; // Usamos una variable para almacenar el contenido
+
+    // Iteramos sobre los elementos con la clase 'miClase'
+    Array.from(elementos).forEach(function (elemento) {
+        contenido += elemento.textContent; // Añadimos el texto al contenido
+        contenido += '<br>'; // Añadimos un salto de línea
+    });
+
+    // Removemos el último '<br>' añadido
+    contenido = contenido.substring(0, contenido.lastIndexOf('<br>'));
+
+    // Establecemos el contenido en el div de resultados
+    resultado.innerHTML = contenido;
+});                   
                         </code>
                 </pre>
                     <button onclick="copiarCodigo(this.previousElementSibling)">Copiar Código</button>
@@ -302,12 +319,23 @@ function cambiarTexto() {
                 <div class="p-3 text-rigth">
                     <pre>
                         <code class="languaje-js">
-                                let parrafos = document.getElementsByTagName('p');
-                                let resultado = document.getElementById('resultadoParrafos');
-                                
-                                for (let parrafo of parrafos) {
-                                    resultado.innerHTML += parrafo.textContent + '<br>';
-                                }
+document.addEventListener('DOMContentLoaded', function () {
+    let parrafos = document.getElementsByTagName('p');
+    let resultado = document.getElementById('resultadoParrafos');
+    let contenido = ''; // Usamos una variable para almacenar el contenido
+
+    // Iteramos sobre los elementos con la clase 'miClase'
+    Array.from(parrafos).forEach(function (parrafo) {
+        contenido += parrafo.textContent; // Añadimos el texto al contenido
+        contenido += '<br>'; // Añadimos un salto de línea
+    });
+
+    // Removemos el último '<br>' añadido
+    contenido = contenido.substring(0, contenido.lastIndexOf('<br>'));
+
+    // Establecemos el contenido en el div de resultados
+    resultado.innerHTML = contenido;
+});
                         </code>
                 </pre>
                     <button onclick="copiarCodigo(this.previousElementSibling)">Copiar Código</button>
@@ -339,10 +367,23 @@ function cambiarTexto() {
                 <div class="p-3 text-rigth">
                     <pre>
                         <code class="languaje-js">
-                            let div = document.querySelector('.miDiv');
-                            let resultado3 = document.getElementById('resultado3');
-                            resultado3.textContent = div.textContent;
-                                
+document.addEventListener('DOMContentLoaded', function () {
+    let divs = document.querySelectorAll('.miDiv'); // Obtenemos todos los elementos con la clase 'miDiv'
+    let resultado = document.getElementById('resultado3');
+    let contenido = ''; // Usamos una variable para almacenar el contenido
+
+    // Iteramos sobre los elementos con la clase 'miDiv'
+    divs.forEach(function (div) {
+        contenido += div.textContent; // Añadimos el texto al contenido
+        contenido += '<br>'; // Añadimos un salto de línea
+    });
+
+    // Removemos el último '<br>' añadido
+    contenido = contenido.substring(0, contenido.lastIndexOf('<br>'));
+
+    // Establecemos el contenido en el div de resultados
+    resultado.innerHTML = contenido;
+}); 
                         </code>
                     </pre>
                     <button onclick="copiarCodigo(this.previousElementSibling)">Copiar Código</button>
@@ -360,12 +401,32 @@ function cambiarTexto() {
                 <div class="p-3 text-rigth">
                     <pre>
                         <code class="languaje-js">
-                            let items = document.querySelectorAll('.item');
-                            let resultado = document.getElementById('resultadoItems');
-                            
-                            items.forEach(item => {
-                                resultado.innerHTML += item.textContent + '<br>';
-                            });
+document.addEventListener('DOMContentLoaded', function () {
+    let items = document.querySelectorAll('.item'); // Corrección aquí: '.item' para seleccionar clases
+    let resultado = document.getElementById('resultadoItems');
+
+    // Asegúrate de que el elemento resultado existe
+    if (!resultado) {
+        console.error('El elemento con ID "resultadoItems" no existe en el DOM.');
+        return;
+    }
+
+    let contenido = ''; // Usamos una variable para almacenar el contenido
+
+    // Iteramos sobre los elementos 
+    items.forEach(function (item) {
+        contenido += item.textContent; // Añadimos el texto al contenido
+        contenido += '<br>'; // Añadimos un salto de línea
+    });
+
+    // Removemos el último '<br>' añadido
+    if (contenido.endsWith('<br>')) {
+        contenido = contenido.substring(0, contenido.lastIndexOf('<br>'));
+    }
+
+    // Establecemos el contenido en el div de resultados
+    resultado.innerHTML = contenido;
+});
                     </code>
                 </pre>
                     <button onclick="copiarCodigo(this.previousElementSibling)">Copiar Código</button>
